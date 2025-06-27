@@ -1,0 +1,169 @@
+
+
+.mainContent {
+   font-family: 'Instrument Sans', sans-serif;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.contentText {
+  padding: 2rem;
+ 
+}
+
+.textWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contentImage {
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  padding: 2rem;
+}
+
+.floatAnimated {
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gradientText {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+
+}
+
+.leadText {
+  color: var(--text-black);
+  font-size: 1.25rem;
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+.featureList {
+  margin: 2rem 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text-black);
+}
+
+.featureIcon {
+  margin-right: 15px;
+  color: var(--primary-teal);
+  font-size: 20px;
+}
+
+.ctaContainer {
+  text-align: start;
+  margin: 3rem 0;
+}
+
+.ctaGradientButton {
+  background: var(--gradient-button);
+  border: none;
+  color: var(--text-white);
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px rgba(28, 172, 168, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaGradientButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(199, 218, 218, 0.4);
+}
+
+.btnIcon {
+  font-weight: 500;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaSubtext {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.highlight {
+  color: var(--secondary-purple-dark);
+  font-weight: 600;
+}
+
+
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+  .gradientText {
+    font-size: 2.8rem;
+  }
+  
+  .imageContainer {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gradientText {
+    font-size: 2.2rem;
+  }
+  
+  .contentText {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .featureItem {
+    justify-content: center;
+  }
+  
+ 
+}
+
+@media (max-width: 576px) {
+  .gradientText {
+    font-size: 2rem;
+  }
+  
+  .leadText {
+    font-size: 1.1rem;
+  }
+  
+  .ctaGradientButton {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}

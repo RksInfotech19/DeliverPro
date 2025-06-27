@@ -1,0 +1,235 @@
+
+body {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+ min-height: 100vh;
+  background: var(--gradient-bg);
+  overflow-y: auto;
+}
+
+.gradient-texts {
+  font-family: 'Inter Tight', sans-serif;
+  background: var(--text-white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+/* Logo */
+.logo_img {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffffde;
+  border-radius: 6px;
+}
+
+/* -----------------------------------
+   Navbar
+----------------------------------- */
+.navbar {
+  transition: all 0.3s ease;
+  background: var(--gradient-navbar);
+}
+
+.navbar-scrolled {
+  background: var(--gradient-navbar) !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-white);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-white);
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-teal);
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* -----------------------------------
+   Hero Section
+----------------------------------- */
+.hero-section {
+  padding: 5rem 0;
+  background: linear-gradient(90deg, #e1fbfa, #f2e1f3);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-scooter {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  height: 120px;
+  animation: float 4s ease-in-out infinite 1s;
+}
+
+.img-home {
+  width: 150px;
+  height: 150px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* -----------------------------------
+   Features
+----------------------------------- */
+.features-border {
+  border: 1px solid var(--primary-teal);
+}
+
+.feature-card {
+  border: none;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: -5px 0 1px -2px var( --primary-teal-light);
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: -5px 0 1px -2px var( --primary-teal-light);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-main);
+  color: var(--text-white);
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+/* -----------------------------------
+   Team Section
+----------------------------------- */
+.team-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-card .card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* -----------------------------------
+   Stats Section
+----------------------------------- */
+.stat-card {
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(51, 193, 203, 0.1);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--secondary-purple);
+}
+
+/* -----------------------------------
+   Contact Section
+----------------------------------- */
+.contact-section {
+  background-color: var(--bg-contact);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-main);
+  color: var(--text-white);
+  border-radius: 50%;
+}
+
+.contact-form {
+  background: var(--gradient-contact);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* -----------------------------------
+   Buttons
+----------------------------------- */
+.btn-primary {
+  background: var(--gradient-button);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  color: var(--text-white);
+}
+
+.btn-outline-primary {
+  border-color: var(--primary-teal-light);
+  color: var(--primary-teal-light);
+}
+
+.btn-outline-primary:hover {
+  background: var(--gradient-button);
+  color: var(--text-white);
+}
+
+/* -----------------------------------
+   Gradient Heading/Text
+----------------------------------- */
+.gradient-heading {
+  background: var(--gradient-text);
+  font-weight: 700;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* -----------------------------------
+   Responsive Adjustments
+----------------------------------- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 0;
+    text-align: center;
+  }
+}

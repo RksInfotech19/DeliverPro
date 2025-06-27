@@ -1,0 +1,78 @@
+:root {
+  /* Brand Theme Colors */
+  --primary-teal: #1DACA8;
+  --primary-teal-light: #33C1CB;
+  --secondary-purple: #C23DC9;
+  --secondary-purple-dark: #9c12a3;
+  --accent-violet: #BA44C9;
+  --accent-indigo: #5F6BC9;
+  --body-bg:#f1ffff;
+
+  /* Neutral Colors */
+  --text-dark: #333;
+  --text-black:#000000;
+  --text-white: #fff;
+  --bg-light: #F8F9FA;
+  --bg-contact: #F7FCFF;
+
+  /* Gradient Colors */
+  --gradient-main: linear-gradient(90deg, var(--primary-teal-light), var(--accent-violet));
+  --gradient-button: linear-gradient(90deg, var(--primary-teal),var(--secondary-purple) );
+  --gradient-text: linear-gradient(90deg, #09bab4 10%, #a579f0 40%, #9c12a3 90%);
+  --gradient-contact: linear-gradient(90deg, #c2eae8, #e5bee7);
+  --gradient-navbar: linear-gradient(90deg, #93e2dc, #e58ae7);
+  --gradient-bg: linear-gradient(90deg, #f7fffe, #fbf4fb);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

@@ -1,0 +1,68 @@
+.mainContainer {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.formContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.sectionHeading {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.required {
+  color: #dc3545;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancelButton {
+  padding: 0.5rem 1.5rem;
+}
+
+.saveButton {
+  padding: 0.5rem 2rem;
+}
+
+.storeImage {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .formContainer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 1rem 0;
+  }
+  
+  .formContainer {
+    padding: 1rem;
+  }
+}
