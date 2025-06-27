@@ -1,8 +1,40 @@
 import { Icons } from '../icons';
 import styles from './AddShop.module.css';
 import StoreImg from '../../assets/images/store-img.png';
-
+import { LookupLabelService } from '../../service/lookupLabel.service';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const AddShop = () => {
+
+  const [categories, setCategories] = useState<any[]>([]);
+  const [states, setStates] = useState<any[]>([]);
+  const lookupLabelService = new LookupLabelService();
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const lookupData = await lookupLabelService.getLookupLabel();
+        // Assuming categories are under 'categories' key
+        setCategories(lookupData.categories || []);
+      } catch (error) {
+        console.error('Failed to load categories:', error);
+      }
+    };
+
+    const fetchStates = async () => {
+      try {
+        const lookupData = await lookupLabelService.getLookupLabel();
+        // Assuming states are under 'states' key
+        setStates(lookupData.states || []);
+      } catch (error) {
+        console.error('Failed to load states:', error);
+      }
+    };
+
+    fetchCategories();
+    fetchStates();
+  }, []);
+
   return (
     <div className={`d-flex justify-content-center align-items-center ${styles.mainContainer}`}>
       <div className={`container ${styles.formContainer}`}>
@@ -33,10 +65,12 @@ const AddShop = () => {
                     Category <span className={styles.required}>*</span>
                   </label>
                   <select className="form-select" id="category">
-                    <option value="">Select Category</option>
-                    <option value="retail">Retail</option>
-                    <option value="restaurant">Restaurant</option>
-                    <option value="service">Service</option>
+                    <option value="0" disabled>Select Category</option>
+                    {categories.map((category: any) => (
+                      <option key={category.id} value={category.value}>
+                        {category.categoryName}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="col-12">
@@ -66,10 +100,12 @@ const AddShop = () => {
                     State <span className={styles.required}>*</span>
                   </label>
                   <select className="form-select" id="state">
-                    <option value="">Select State</option>
-                    <option value="california">California</option>
-                    <option value="new-york">New York</option>
-                    <option value="texas">Texas</option>
+                    <option value="0" disabled>Select State</option>
+                    {states.map((state: any) => (
+                      <option key={state.id} value={state.value}>
+                        {state.stateName}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="col-md-6">
@@ -126,7 +162,7 @@ const AddShop = () => {
 
               {/* Form Buttons */}
               <div className={styles.buttonGroup}>
-                <button type="button" className={`btn btn-outline-secondary ${styles.cancelButton}`}>
+                <button type="button" onClick={()=> navigate('/')} className={`btn btn-outline-secondary ${styles.cancelButton}`}>
                   Cancel
                 </button>
                 <button type="submit" className={`btn btn-primary ${styles.saveButton}`}>
