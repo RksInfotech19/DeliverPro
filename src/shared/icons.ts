@@ -34,6 +34,9 @@ import {
   FaCamera,
   FaCloudUploadAlt,   
   FaUser, 
+  FaPaperPlane,
+  FaCheck,
+  FaRupeeSign,
 } from "react-icons/fa";
 
 export const Icons = {
@@ -72,4 +75,7 @@ export const Icons = {
   FaCamera,
   FaCloudUploadAlt,
   FaUser, 
+  FaPaperPlane,
+  FaCheck,
+  FaRupeeSign,
 };

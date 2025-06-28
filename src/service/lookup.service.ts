@@ -17,6 +17,7 @@ export class LookupService {
   public async getAllLookups(): Promise<any> {
     try {
       const response = await axios.get(API_URL);
+      sessionStorage.setItem('lookupData', JSON.stringify(response.data));
       return response.data;
     } catch (error) {
       console.error('Error fetching lookups:', error);

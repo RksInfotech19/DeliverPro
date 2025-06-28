@@ -8,31 +8,25 @@ const AddShop = () => {
 
   const [categories, setCategories] = useState<any[]>([]);
   const [states, setStates] = useState<any[]>([]);
-  const lookupLabelService = new LookupLabelService();
+  const [showPan, setShowPan] = useState(false);
+  const [showGst, setShowGst] = useState(false);
   const navigate = useNavigate();
+
   useEffect(() => {
-    const fetchCategories = async () => {
+    const loadData = async () => {
+      const service = LookupLabelService.getInstance();
       try {
-        const lookupData = await lookupLabelService.getLookupLabel();
-        // Assuming categories are under 'categories' key
-        setCategories(lookupData.categories || []);
+        await service.getLookupLabel(); // loads and caches internally
+        const categories = service.getCategories();
+        const states = service.getStates();
+        setCategories(categories);
+        setStates(states);
       } catch (error) {
-        console.error('Failed to load categories:', error);
+        console.error('Failed to load lookups:', error);
       }
     };
 
-    const fetchStates = async () => {
-      try {
-        const lookupData = await lookupLabelService.getLookupLabel();
-        // Assuming states are under 'states' key
-        setStates(lookupData.states || []);
-      } catch (error) {
-        console.error('Failed to load states:', error);
-      }
-    };
-
-    fetchCategories();
-    fetchStates();
+    loadData();
   }, []);
 
   return (
@@ -120,15 +114,53 @@ const AddShop = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                  <label htmlFor="panGst" className="form-label">
+                  <label className="form-label">
                     PAN or GST Number <span className={styles.required}>*</span>
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="panGst"
-                    placeholder="Enter PAN or GST Number"
-                  />
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="checkPan"
+                      checked={showPan}
+                      onChange={() => setShowPan(!showPan)}
+                    />
+                    <label className="form-check-label" htmlFor="checkPan">
+                      PAN
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="checkGst"
+                      checked={showGst}
+                      onChange={() => setShowGst(!showGst)}
+                    />
+                    <label className="form-check-label" htmlFor="checkGst">
+                      GST
+                    </label>
+                  </div>
+
+                  {showPan && (
+                    <input
+                      type="text"
+                      className="form-control mt-2"
+                      id="panInput"
+                      placeholder="Enter PAN Number"
+                    />
+                  )}
+
+                  {showGst && (
+                    <input
+                      type="text"
+                      className="form-control mt-2"
+                      id="gstInput"
+                      placeholder="Enter GST Number"
+                    />
+                  )}
                 </div>
               </div>
 

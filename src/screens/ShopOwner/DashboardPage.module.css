@@ -1,0 +1,117 @@
+.dashboardContainer {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.textWrapper {
+    background-color:#e9fafb;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.gradientText {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.leadText {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.getStartedButton {
+    background-image: linear-gradient(to right, #b744c8, #23adbd);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+}
+
+.getStartedButton:hover {
+    background-image: linear-gradient(to right, #23adbd, #b744c8);
+}
+
+.btnIcon {
+    margin-right: 10px;
+}
+
+.statsRow {
+    margin-bottom: 30px;
+}
+
+.statCard {
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+}
+
+.statIcon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #4f46e5;
+}
+
+.activityCard {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.activityHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.viewAll {
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timelineItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.timelineDotgreen,
+.timelineDotblue,
+.timelineDotorange {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.timelineDotgreen {
+    background-color: green;
+}
+
+.timelineDotblue {
+    background-color: #007bff;
+}
+
+.timelineDotorange {
+    background-color: orange;
+}
