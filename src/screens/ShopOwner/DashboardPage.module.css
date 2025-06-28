@@ -4,7 +4,7 @@
 }
 
 .textWrapper {
-    background-color:#e9fafb;
+    background-color:white;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     padding: 40px;
@@ -19,6 +19,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 .leadText {
@@ -35,6 +36,7 @@
     font-weight: bold;
     display: inline-flex;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .getStartedButton:hover {
@@ -54,8 +56,14 @@
     border: 1px solid #d1d5db;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 -6px 0px #19aaa5;
     margin-bottom: 15px;
+}
+
+.statCard:hover {
+    box-shadow: 0 -6px 0px #b744c8;
+    transform: translateY(-4px);
+    transition: all 0.4s ease;
 }
 
 .statIcon {
@@ -114,4 +122,63 @@
 
 .timelineDotorange {
     background-color: orange;
+}
+
+@media (max-width: 768px) {
+    .gradientText {
+        font-size: 1.8rem;
+    }
+
+    .leadText {
+        font-size: 1rem;
+    }
+
+    .getStartedButton {
+        width: 100%;
+        margin-top: 15px;
+        font-size: 1rem;
+    }
+
+    .statCard {
+        margin-bottom: 20px;
+    }
+
+    .textWrapper {
+        padding: 20px;
+    }
+
+    .timelineItem {
+        flex-direction: row;
+    }
+
+    .activityHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .gradientText {
+        font-size: 1.5rem;
+    }
+
+    .leadText {
+        font-size: 0.95rem;
+    }
+
+    .getStartedButton {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+    }
+
+    .timelineItem {
+        font-size: 0.9rem;
+    }
+
+    .timelineDotgreen,
+    .timelineDotblue,
+    .timelineDotorange {
+        width: 12px;
+        height: 12px;
+    }
 }

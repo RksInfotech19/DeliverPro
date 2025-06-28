@@ -2,25 +2,39 @@ import { Icons } from '../icons';
 import styles from './AddShop.module.css';
 import StoreImg from '../../assets/images/store-img.png';
 import { LookupLabelService } from '../../service/lookupLabel.service';
+import { ShopService } from '../../service/Shop.service';
+import type { Shop } from '../../models/shop.model';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-const AddShop = () => {
 
+const AddShop = () => {
   const [categories, setCategories] = useState<any[]>([]);
   const [states, setStates] = useState<any[]>([]);
   const [showPan, setShowPan] = useState(false);
   const [showGst, setShowGst] = useState(false);
   const navigate = useNavigate();
 
+  const [shopData, setShopData] = useState<Shop>({
+    shopId: 0,
+    shopName: '',
+    category: 0,
+    shopAddress: '',
+    city: '',
+    state: 0,
+    mobileNumber: '',
+    pan: '',
+    gstNumber: '',
+    ownerName: '',
+    ownerPhone: '',
+  });
+
   useEffect(() => {
     const loadData = async () => {
       const service = LookupLabelService.getInstance();
       try {
-        await service.getLookupLabel(); // loads and caches internally
-        const categories = service.getCategories();
-        const states = service.getStates();
-        setCategories(categories);
-        setStates(states);
+        await service.getLookupLabel();
+        setCategories(service.getCategories());
+        setStates(service.getStates());
       } catch (error) {
         console.error('Failed to load lookups:', error);
       }
@@ -29,19 +43,35 @@ const AddShop = () => {
     loadData();
   }, []);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { id, value } = e.target;
+    setShopData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const shopService = ShopService.getInstance();
+      await shopService.addShop(shopData);
+      navigate('/dashboard'); // Redirect to dashboard after saving
+    } catch (error) {
+      console.error('Error saving shop:', error);
+    }
+  };
+
   return (
     <div className={`d-flex justify-content-center align-items-center ${styles.mainContainer}`}>
       <div className={`container ${styles.formContainer}`}>
         <h3 className={`text-center mb-4 ${styles.formTitle}`}>Shop Detail Form</h3>
-        
+
         <div className="row">
-          {/* Form Column - takes full width on mobile, 7/12 on lg+ */}
           <div className="col-lg-7">
-            <form>
-              {/* Shop Information Section */}
+            <form onSubmit={handleSubmit}>
               <h5 className={styles.sectionHeading}><Icons.FaStore /> Shop Information</h5>
-              
-              {/* Shop Details - matches the exact layout from your image */}
+
               <div className="row g-3">
                 <div className="col-md-6">
                   <label htmlFor="shopName" className="form-label">
@@ -51,6 +81,8 @@ const AddShop = () => {
                     type="text"
                     className="form-control"
                     id="shopName"
+                    value={shopData.shopName}
+                    onChange={handleChange}
                     placeholder="Enter Shop Name"
                   />
                 </div>
@@ -58,10 +90,15 @@ const AddShop = () => {
                   <label htmlFor="category" className="form-label">
                     Category <span className={styles.required}>*</span>
                   </label>
-                  <select className="form-select" id="category">
-                    <option value="0" disabled>Select Category</option>
+                  <select
+                    className="form-select"
+                    id="category"
+                    value={Number(shopData.category)}
+                    onChange={handleChange}
+                  >
+                    <option value={0} disabled>Select Category</option>
                     {categories.map((category: any) => (
-                      <option key={category.id} value={category.value}>
+                      <option key={category.categoryID} value={category.categoryID}>
                         {category.categoryName}
                       </option>
                     ))}
@@ -75,6 +112,8 @@ const AddShop = () => {
                     type="text"
                     className="form-control"
                     id="shopAddress"
+                    value={shopData.shopAddress}
+                    onChange={handleChange}
                     placeholder="Enter Shop Address"
                   />
                 </div>
@@ -86,6 +125,8 @@ const AddShop = () => {
                     type="text"
                     className="form-control"
                     id="city"
+                    value={shopData.city}
+                    onChange={handleChange}
                     placeholder="Enter City"
                   />
                 </div>
@@ -93,10 +134,15 @@ const AddShop = () => {
                   <label htmlFor="state" className="form-label">
                     State <span className={styles.required}>*</span>
                   </label>
-                  <select className="form-select" id="state">
-                    <option value="0" disabled>Select State</option>
+                  <select
+                    className="form-select"
+                    id="state"
+                    value={Number(shopData.state)}
+                    onChange={handleChange}
+                  >
+                    <option value="" disabled>Select State</option>
                     {states.map((state: any) => (
-                      <option key={state.id} value={state.value}>
+                      <option key={state.stateID} value={state.stateID}>
                         {state.stateName}
                       </option>
                     ))}
@@ -110,6 +156,8 @@ const AddShop = () => {
                     type="tel"
                     className="form-control"
                     id="mobileNumber"
+                    value={shopData.mobileNumber}
+                    onChange={handleChange}
                     placeholder="Enter Mobile Number"
                   />
                 </div>
@@ -148,7 +196,9 @@ const AddShop = () => {
                     <input
                       type="text"
                       className="form-control mt-2"
-                      id="panInput"
+                      id="pan"
+                      value={shopData.pan}
+                      onChange={handleChange}
                       placeholder="Enter PAN Number"
                     />
                   )}
@@ -157,16 +207,17 @@ const AddShop = () => {
                     <input
                       type="text"
                       className="form-control mt-2"
-                      id="gstInput"
+                      id="gstNumber"
+                      value={shopData.gstNumber}
+                      onChange={handleChange}
                       placeholder="Enter GST Number"
                     />
                   )}
                 </div>
               </div>
 
-              {/* Owner Information Section */}
               <h5 className={`mt-4 ${styles.sectionHeading}`}><Icons.FaUser /> Owner Information</h5>
-              
+
               <div className="row g-3">
                 <div className="col-md-6">
                   <label htmlFor="ownerName" className="form-label">
@@ -176,35 +227,44 @@ const AddShop = () => {
                     type="text"
                     className="form-control"
                     id="ownerName"
+                    value={shopData.ownerName}
+                    onChange={handleChange}
                     placeholder="Enter Owner Name"
                   />
                 </div>
                 <div className="col-md-6">
-                  <label htmlFor="phone" className="form-label">
+                  <label htmlFor="ownerPhone" className="form-label">
                     Phone <span className={styles.required}>*</span>
                   </label>
                   <input
                     type="tel"
                     className="form-control"
-                    id="phone"
+                    id="ownerPhone"
+                    value={shopData.ownerPhone}
+                    onChange={handleChange}
                     placeholder="Enter Phone"
                   />
                 </div>
               </div>
 
-              {/* Form Buttons */}
               <div className={styles.buttonGroup}>
-                <button type="button" onClick={()=> navigate('/')} className={`btn btn-outline-secondary ${styles.cancelButton}`}>
+                <button
+                  type="button"
+                  onClick={() => navigate('/')}
+                  className={`btn btn-outline-secondary ${styles.cancelButton}`}
+                >
                   Cancel
                 </button>
-                <button type="submit" className={`btn btn-primary ${styles.saveButton}`}>
+                <button
+                  type="submit"
+                  className={`btn btn-primary ${styles.saveButton}`}
+                >
                   Save Shop
                 </button>
               </div>
             </form>
           </div>
 
-          {/* Image Column - only shows on lg screens and above */}
           <div className="col-lg-5 d-none d-lg-flex align-items-center justify-content-center">
             <img src={StoreImg} alt="store" className={styles.storeImage} />
           </div>
