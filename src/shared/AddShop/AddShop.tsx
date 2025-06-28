@@ -62,15 +62,27 @@ const AddShop = () => {
     }
   };
 
-  return (
-    <div className={`d-flex justify-content-center align-items-center ${styles.mainContainer}`}>
-      <div className={`container ${styles.formContainer}`}>
-        <h3 className={`text-center mb-4 ${styles.formTitle}`}>Shop Detail Form</h3>
+return (
+  <>
 
-        <div className="row">
-          <div className="col-lg-7">
+  <div className={styles.pageWrapper}>
+    <div className={`container ${styles.formCard}`}>
+  
+  <div className="text-center">
+  <h3 className={`  ${styles.formTitle}`}>Shop Detail Form</h3>
+  </div>
+      {/* Upload + Store Image Section */}
+      <div className={styles.uploadSection}>
+        <div className={styles.uploadCircle}>
+          <Icons.FaCamera />
+        </div>
+        <button className={`btn ${styles.uploadButton}`}>
+          <Icons.FaCloudUploadAlt /> Upload Shop Photo
+        </button>
+        <img src={StoreImg} alt="Store" className={styles.storeImage} />
+      </div>
             <form onSubmit={handleSubmit}>
-              <h5 className={styles.sectionHeading}><Icons.FaStore /> Shop Information</h5>
+              <h5 className={styles.sectionHeading}><Icons.FaStore className={styles.iconColor} /> Shop Information</h5>
 
               <div className="row g-3">
                 <div className="col-md-6">
@@ -216,7 +228,7 @@ const AddShop = () => {
                 </div>
               </div>
 
-              <h5 className={`mt-4 ${styles.sectionHeading}`}><Icons.FaUser /> Owner Information</h5>
+              <h5 className={`mt-4 ${styles.sectionHeading}`}><Icons.FaUser className={styles.iconColor}  /> Owner Information</h5>
 
               <div className="row g-3">
                 <div className="col-md-6">
@@ -265,12 +277,9 @@ const AddShop = () => {
             </form>
           </div>
 
-          <div className="col-lg-5 d-none d-lg-flex align-items-center justify-content-center">
-            <img src={StoreImg} alt="store" className={styles.storeImage} />
-          </div>
+       
         </div>
-      </div>
-    </div>
+   </>
   );
 };
 

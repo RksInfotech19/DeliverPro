@@ -1,68 +1,104 @@
-.mainContainer {
+.pageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
   min-height: 100vh;
-  padding: 2rem 0;
+  background-color: #f5f6fa;
 }
 
-.formContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+.formCard {
+  background: white;
   padding: 2rem;
-  background-color: var(--white-color);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .formTitle {
-  color: #333;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom:2px;
 }
 
-.sectionHeading {
-  color: #333;
-  font-weight: 600;
+
+
+.uploadSection {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.uploadCircle {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.uploadButton {
+  background-color: #e0f7fa;
+  border: 1px solid rgb(152, 237, 232);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #00796b;
   margin-bottom: 1rem;
 }
 
-.required {
-  color: #dc3545;
+.storeImage {
+  width: 215px;
+  margin-top: -40px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
+.sectionHeading {
+  margin-top: 2rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+background: linear-gradient(90deg, #c29400, #601199);
+font-weight: 800;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.iconColor{
+  color: purple;
+}
 .buttonGroup {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.cancelButton {
-  padding: 0.5rem 1.5rem;
+.cancelBtn {
+  background: white;
+  border: 1px solid #00acc1;
+  color: #00acc1;
 }
 
-.saveButton {
-  padding: 0.5rem 2rem;
-}
-
-.storeImage {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .formContainer {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .mainContainer {
-    padding: 1rem 0;
-  }
-  
-  .formContainer {
-    padding: 1rem;
-  }
+.saveBtn {
+  background: linear-gradient(to right, #00acc1, #7b1fa2);
+  color: white;
+  border: none;
 }

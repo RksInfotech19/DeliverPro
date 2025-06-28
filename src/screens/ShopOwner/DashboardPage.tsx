@@ -28,7 +28,7 @@ const DashboardPage = () => {
                         { title: "Today's Payments", value: 10, icon: <Icons.FaRupeeSign /> },
                     ].map((card, idx) => (
                         <Col md={3} key={idx}>
-                            <Card className={dashboardStyles.statCard}>
+                            <Card className={dashboardStyles.statsCard}>
                                 <Card.Body className="text-center">
                                     <div className={dashboardStyles.statIcon}>{card.icon}</div>
                                     <div>{card.title}</div>

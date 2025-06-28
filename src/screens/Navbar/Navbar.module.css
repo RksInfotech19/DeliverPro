@@ -1,5 +1,5 @@
 .navbarCustom {
-  background: linear-gradient(90deg, #1ec9c3, #9b59b6);
+  background: linear-gradient(90deg, #cd5b0a, #601199);
   /* background-color: #5d6d7e; */
   color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -35,9 +35,6 @@
   display: flex;
   align-items: center;
 }
-
-
-
 
 .navLink {
   color: var(--text-dark);

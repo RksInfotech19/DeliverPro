@@ -17,11 +17,11 @@
 
   /* Gradient Colors */
   --gradient-main: linear-gradient(90deg, var(--primary-teal-light), var(--accent-violet));
-  --gradient-button: linear-gradient(90deg, var(--primary-teal),var(--secondary-purple) );
-  --gradient-text: linear-gradient(90deg, #09bab4 10%, #a579f0 40%, #9c12a3 90%);
+  --gradient-button: linear-gradient(90deg, #c25100, #601199);
+  --gradient-text: linear-gradient(90deg, #c25100, #601199);
   --gradient-contact: linear-gradient(90deg, #c2eae8, #e5bee7);
-  --gradient-navbar: linear-gradient(90deg, #93e2dc, #e58ae7);
-  --gradient-bg: linear-gradient(90deg, #f7fffe, #fbf4fb);
+  --gradient-navbar: linear-gradient(90deg, #3db8b4, #2bc7c2);
+  --gradient-bg: linear-gradient(90deg, #e7fffb, #f8e1f8);
 }
 
 a {

@@ -68,7 +68,7 @@
 
 .featureIcon {
   margin-right: 15px;
-  color: var(--primary-teal);
+  color:rgb(103, 7, 118);
   font-size: 20px;
 }
 
@@ -88,7 +88,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 10px 20px rgba(28, 172, 168, 0.3);
+  box-shadow: 0 10px 20px rgba(172, 98, 28, 0.3);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
