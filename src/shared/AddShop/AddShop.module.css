@@ -3,8 +3,6 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  min-height: 100vh;
-  background-color: #f5f6fa;
 }
 
 .formCard {
@@ -21,14 +19,9 @@
   margin-left: auto;
   margin-right: auto;
   font-weight: 700;
-  background: var(--gradient-text);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom:2px;
+color:rgb(61, 61, 61);
+  margin-bottom: 2px;
 }
-
-
 
 .uploadSection {
   text-align: center;
@@ -39,24 +32,24 @@
 .uploadCircle {
   width: 80px;
   height: 80px;
-  border: 2px dashed #ccc;
+  border: 1px dashed #70147f;
   border-radius: 50%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #999;
+  color: #848484;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .uploadButton {
-  background-color: #e0f7fa;
-  border: 1px solid rgb(152, 237, 232);
+  background-color: #fef8ff;
+  border: 1px solid rgb(193 152 237);
   padding: 0.4rem 1rem;
   border-radius: 8px;
   font-weight: 500;
-  color: #00796b;
+  color: #420079;
   margin-bottom: 1rem;
 }
 
@@ -72,18 +65,18 @@
   margin-top: 2rem;
   display: inline-block;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-background: linear-gradient(90deg, #c29400, #601199);
-font-weight: 800;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size:20px;
+font-weight: 600;
+    color: #52008d;
+
+
 
 }
-.iconColor{
-  color: purple;
+
+.iconColor {
+   color: #52008d;
 }
+
 .buttonGroup {
   display: flex;
   justify-content: center;
@@ -101,4 +94,7 @@ font-weight: 800;
   background: linear-gradient(to right, #00acc1, #7b1fa2);
   color: white;
   border: none;
+}
+.required{
+  color: #DE4150;
 }

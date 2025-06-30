@@ -32,38 +32,41 @@ const DeliverProNavbar = ({
 
         <Navbar.Toggle aria-controls="deliverpro-navbar" />
 
-        <Navbar.Collapse id="deliverpro-navbar" className="justify-content-between">
-          <Nav className="mx-auto mx-lg-0">
-            {navItems.map((item, index) => {
-              const IconComponent = item.icon ? Icons[item.icon] : null;
-              return (
-                <Nav.Link
-                  key={index}
-                  href={item.path}
-                  className={`${styles.navLink} ${item.isActive ? styles.active : ''}`}
-                >
-                  {IconComponent && <IconComponent className="me-1" />}
-                  {item.label}
-                </Nav.Link>
-              );
-            })}
-          </Nav>
+<Navbar.Collapse id="deliverpro-navbar" className="justify-content-between">
+  <Nav className="ms-auto">
+    {navItems.map((item, index) => {
+      const IconComponent = item.icon ? Icons[item.icon] : null;
+      return (
+        <Nav.Link
+          key={index}
+          href={item.path}
+          className={`${styles.navLink} ${item.isActive ? styles.active : ''}`}
+        >
+          {IconComponent && <IconComponent className="me-1" />}
+          {item.label}
+        </Nav.Link>
+      );
+    })}
+  </Nav>
 
-          <Nav className="align-items-center">
-            <div className={styles.userInfoContainer}>
-              <div className={`d-flex align-items-center ${styles.userInfo}`}>
-                <div className={`${styles.userAvatarInitials} me-2`}>
-                  {userInitials || userName.substring(0, 2).toUpperCase()}
-                </div>
-                <div className={styles.userDetails}>
-                  <span className={styles.userRoleBadge}>{userRole}</span>
-                </div>
-              </div>
-            </div>
-          </Nav>
-        </Navbar.Collapse>
+  <Nav className="align-items-center ms-3">
+    <div className={styles.userInfoContainer}>
+      <div className={`d-flex align-items-center ${styles.userInfo}`}>
+        <div className={`${styles.userAvatarInitials} me-2`}>
+          {userInitials || userName.substring(0, 2).toUpperCase()}
+        </div>
+        <div className={styles.userDetails}>
+          <span className={styles.userRoleBadge}>{userRole}</span>
+        </div>
+      </div>
+    </div>
+  </Nav>
+</Navbar.Collapse>
+
       </Container>
     </Navbar>
+
+    
   );
 };
 

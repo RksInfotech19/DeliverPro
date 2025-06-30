@@ -17,6 +17,7 @@ export const loadFonts = () => {
         'Merienda:400,700',
         'Open Sans:300,400,600,700',
          'Inter:300,400,500,600,700',
+         'Roboto:300,400,500,700'
       ],
     },
   });

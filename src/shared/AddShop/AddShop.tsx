@@ -68,8 +68,8 @@ return (
   <div className={styles.pageWrapper}>
     <div className={`container ${styles.formCard}`}>
   
-  <div className="text-center">
-  <h3 className={`  ${styles.formTitle}`}>Shop Detail Form</h3>
+  <div className="text-center mb-3">
+  <h4 className={`   ${styles.formTitle}` }>Shop Detail Form</h4>
   </div>
       {/* Upload + Store Image Section */}
       <div className={styles.uploadSection}>
@@ -152,7 +152,7 @@ return (
                     value={Number(shopData.state)}
                     onChange={handleChange}
                   >
-                    <option value="" disabled>Select State</option>
+                    <option value={0} disabled>Select State</option>
                     {states.map((state: any) => (
                       <option key={state.stateID} value={state.stateID}>
                         {state.stateName}
