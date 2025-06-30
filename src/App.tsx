@@ -7,9 +7,16 @@ import AddShop from './shared/AddShop/AddShop';
 import Layout from './screens/Layout/NavbarLayout';
 import DashboardPage from './screens/ShopOwner/DashboardPage';
 import BackgroundLayout from './screens/Layout/BackgroundLayout';
+import NewDeliveryPage from './screens/ShopOwner/NewDeliveryPage';
+import { LookupLabelService } from './service/lookupLabel.service';
+import { useEffect } from 'react';
 
 function App() {
 
+  useEffect(() => {
+    const lookupLabelService = LookupLabelService.getInstance();
+    lookupLabelService.getLookupLabel();
+  }, []); // Runs only once on mount
   
   return (
     <>
@@ -28,6 +35,7 @@ function App() {
     } />
 
     <Route path="dashboard" element={<DashboardPage />} />
+    <Route path="delivery-request" element={<NewDeliveryPage />} />
   </Route>
 
   <Route path="/landing-page" element={<DeliverPro />} />

@@ -1,9 +1,10 @@
 import axios from "axios";
+import { developmentConfig } from "../configuration/development";
 
 export class ShopService {
   private static instance: ShopService;
-  private apiUrl = "http://localhost:3000/api/shops/all";
-  private createApi = "http://localhost:3000/api/shops/create";  
+  private apiUrl = `${developmentConfig.apiUrl}/${developmentConfig.shopService}/all`;
+  private createApi = `${developmentConfig.apiUrl}/${developmentConfig.shopService}/create`;  
   private constructor() {}
 
   public static getInstance(): ShopService {

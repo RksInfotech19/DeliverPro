@@ -1,0 +1,104 @@
+.deliveryContainer {
+  background-color: #f8f9f9;
+  min-height: 100vh;
+  padding: 3%;
+}
+
+.gradientTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: var(--gradient-button);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.formCard {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: none;
+  padding: 25px;
+  background: #ffffff;
+  width: 80%;
+  margin: auto;
+}
+
+.cardBody {
+  padding: 10px;
+}
+
+.formTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.formSection {
+  margin-top: 10px;
+}
+
+.inputLabel {
+  font-weight: 400;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+.buttonGroup {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.submitBtn {
+  background: var(--gradient-button);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 25px;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(199, 218, 218, 0.4);
+}
+
+.cancelBtn {
+  background-color: transparent;
+  border: 2px solid #d50063;
+  color: #d50063;
+  padding: 10px 30px;
+  font-weight: bold;
+  border-radius: 25px;
+  min-width: 120px;
+}
+
+.cancelBtn:hover {
+  background-color: #d50063;
+  color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+  .formCard {
+    width: 95%;
+  }
+
+  .gradientTitle {
+    font-size: 1.2rem;
+  }
+
+  .formTitle {
+    font-size: 1rem;
+  }
+
+  .submitBtn, .cancelBtn {
+    min-width: 150px;
+    padding: 8px 20px;
+  }
+}
