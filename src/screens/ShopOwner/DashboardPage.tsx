@@ -1,8 +1,13 @@
 import dashboardStyles from './DashboardPage.module.css';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Icons } from '../../shared/icons';
-
+import { useNavigate } from 'react-router-dom';
 const DashboardPage = () => {
+    const navigate = useNavigate();
+    const handleGetStarted = () => {
+        navigate('/delivery-request');
+    };
+
     return (
         <div className={dashboardStyles.dashboardContainer}>
             <Container fluid className={dashboardStyles.mainContent}>
@@ -12,7 +17,7 @@ const DashboardPage = () => {
                         <p className={`lead ${dashboardStyles.leadText}`}>
                             Manage your deliveries, track orders in real-time, grow your business with our reliable delivery network.
                         </p>
-                        <button className={dashboardStyles.getStartedButton}>
+                        <button className={dashboardStyles.getStartedButton} onClick={handleGetStarted}>
                             <Icons.FaPaperPlane className={dashboardStyles.btnIcon} />
                             Request Delivery
                         </button>
@@ -28,13 +33,16 @@ const DashboardPage = () => {
                         { title: "Today's Payments", value: 10, icon: <Icons.FaRupeeSign /> },
                     ].map((card, idx) => (
                         <Col md={3} key={idx}>
-                            <Card className={dashboardStyles.statsCard}>
-                                <Card.Body className="text-center">
-                                    <div className={dashboardStyles.statIcon}>{card.icon}</div>
-                                    <div>{card.title}</div>
-                                    <h4>{card.value}</h4>
-                                </Card.Body>
-                            </Card>
+                            <div className={dashboardStyles.cardWrapper}>
+                                <Card className={dashboardStyles.statCard}>
+                                    <Card.Body className="text-center">
+                                        <div className={dashboardStyles.statIcon}>{card.icon}</div>
+                                        <div>{card.title}</div>
+                                        <h4>{card.value}</h4>
+                                    </Card.Body>
+                                </Card>
+                                <div className={dashboardStyles.hoverCardCorner}></div>
+                            </div>
                         </Col>
                     ))}
                 </Row>

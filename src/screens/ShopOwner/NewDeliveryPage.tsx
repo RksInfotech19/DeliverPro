@@ -3,6 +3,8 @@ import NewDeliveryStyle from "./NewDeliveryPage.module.css";
 import { useState, useEffect } from "react";
 import { LookupLabelService } from "../../service/lookupLabel.service";
 import type { Order } from "../../models/order.model";
+import { useNavigate } from "react-router-dom";
+
 const NewDeliveryPage = () => {
   const [productType, setProductType] = useState<any[]>([]);
   const [orderDetails, setOrderDetails] = useState <Order>({
@@ -17,6 +19,12 @@ const NewDeliveryPage = () => {
     specialInstructions: "",
     deliveryDate: ""
   });
+
+  const navigate = useNavigate();
+
+  const handleCancel = () => {
+    navigate("/dashboard");
+  }
 
   useEffect(() => {
     const fetchProductTypes = async () => {
@@ -37,7 +45,7 @@ const NewDeliveryPage = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     // Here you would typically send the orderDetails to your backend
     console.log("Order Details Submitted:", orderDetails);
   };
@@ -100,7 +108,7 @@ const NewDeliveryPage = () => {
 
                 <div className={NewDeliveryStyle.buttonGroup}>
                     <button type="submit" className={NewDeliveryStyle.submitBtn}>Submit Request</button>
-                    <button type="button" className={NewDeliveryStyle.cancelBtn}>Cancel</button>
+                    <button type="button" className={NewDeliveryStyle.cancelBtn} onClick={handleCancel}>Cancel</button>
                 </div>
                 </form>
               </div>
