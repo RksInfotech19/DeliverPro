@@ -2,27 +2,28 @@
 .homepageContainer {
   position: relative;
   overflow: hidden;
-
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .mainContent {
-  min-height: calc(100vh - 45px);
+  min-height: calc(100vh - 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: 'Instrument Sans', sans-serif;
   position: relative;
   z-index: 1;
-  padding: 2rem 0;
+  padding: 1.5rem 1rem;
 }
 
 .contentText {
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
 }
 
 .textWrapper {
-  max-width: 600px;
+  max-width: 36rem; /* Reduced from 40rem */
   margin: 0 auto;
   position: relative;
 }
@@ -34,97 +35,57 @@
 
 .contentImage {
   position: relative;
-  height: 100%;
+  min-height: 25vh; /* Reduced from 30vh */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem; /* Reduced from 1.5rem */
 }
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.imageContainer {
-  position: relative;
-  width: 100%;
-  z-index: 3;
-}
-
-.mainImage {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-
-  position: relative;
-  z-index: 2;
-  animation: float 6s ease-in-out infinite;
-}
-
-.imageDecoration {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #8a2be2 0%, #7c1cb0 100%);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 0.1;
-  animation: rotate 20s linear infinite;
-}
-
-/* Rest of your existing styles remain the same */
+/* Text Styles */
 .gradientText {
   background: linear-gradient(90deg, #7c1cb0, #4b0082);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-weight: 800;
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-weight: 700; /* Reduced from 800 */
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
   line-height: 1.2;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem); /* Reduced sizes */
 }
 
 .leadText {
   color: #4a4a4a;
-  font-size: 1.25rem;
-  margin: 2rem 0;
-  line-height: 1.6;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem); /* Reduced sizes */
+  margin: 1rem 0; /* Reduced from 1.5rem */
+  line-height: 1.5;
 }
 
+/* Feature List */
 .featureList {
-  margin: 2rem 0;
+  margin: 1rem 0; /* Reduced from 1.5rem */
 }
 
 .featureItem {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
-  font-size: 19px;
+  margin: 0.5rem 0; /* Reduced from 0.75rem */
+  font-size: clamp(0.85rem, 1.1vw, 1rem); /* Reduced sizes */
   font-weight: 500;
   color: #4a4a4a;
-  padding: 12px 20px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.featureItem:hover {
-  background: rgba(124, 28, 176, 0.1);
-  transform: translateX(5px);
+  padding: 0.5rem 1rem; /* Reduced padding */
+  border-radius: 2rem; /* Reduced from 3.125rem */
 }
 
 .featureIcon {
-  margin-right: 15px;
+  margin-right: 0.5rem; /* Reduced from 0.75rem */
   color: #7c1cb0;
-  font-size: 20px;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem); /* Reduced sizes */
 }
 
+/* CTA Button */
 .ctaContainer {
-  margin: 3rem 0;
+  margin: 1.5rem 0; /* Reduced from 2rem */
 }
 
 .ctaGradientButton {
@@ -132,52 +93,41 @@
   border: none;
   color: white;
   font-weight: 500;
-  font-size: 1.2rem;
-  padding: 1rem 3rem;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 10px 20px rgba(124, 28, 176, 0.3);
-  transition: all 0.3s ease;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem); /* Reduced sizes */
+  padding: 0.7rem 2rem; /* Reduced from 0.8rem 2.5rem */
+  border-radius: 2rem; /* Reduced from 3.125rem */
+  gap: 0.5rem; /* Reduced from 0.625rem */
+  box-shadow: 0 0.5rem 1rem rgba(124, 28, 176, 0.3); /* Reduced shadow */
+}
+
+/* Image Styles */
+.mainImage {
+  max-width: 85%; /* Slightly more constrained */
+  height: auto;
+  border-radius: 0.8rem; /* More subtle rounding */
   position: relative;
-  overflow: hidden;
-  z-index: 1;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+  margin: 0 auto; /* Center the image */
 }
 
-.ctaGradientButton::before {
-  content: '';
+.imageDecoration {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #4b0082 0%, #7c1cb0 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
+  width: 90%; /* Don't let it touch edges */
+  height: 90%;
+  background: linear-gradient(135deg, #8a2be2 0%, #7c1cb0 100%);
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; /* More subtle shape */
+  top: 5%;
+  left: 5%;
+  z-index: 1;
+  opacity: 0.08; /* More subtle */
+  animation: rotate 25s linear infinite; /* Slower rotation */
 }
 
-.ctaGradientButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(124, 28, 176, 0.4);
-}
-
-.ctaGradientButton:hover::before {
-  opacity: 1;
-}
-
-.btnIcon {
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-
-
-
-/* Animations */
+/* More subtle animations */
 @keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-0.5rem); } /* Reduced movement */
   100% { transform: translateY(0); }
 }
 
@@ -186,60 +136,68 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .gradientText {
-    font-size: 2.8rem;
-  }
-  
-  .imageWrapper {
-    max-width: 500px;
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 75rem) {
+  .textWrapper {
+    max-width: 32rem; /* Reduced from 35rem */
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 62rem) {
   .gradientText {
-    font-size: 2.2rem;
+    font-size: clamp(1.5rem, 5vw, 2.25rem); /* Reduced sizes */
   }
-  
-  .contentText {
-    text-align: center;
-    padding: 1rem;
+  .contentText, .contentImage {
+    padding: 0.75rem; /* Reduced from 1rem */
   }
-  
-  .featureItem {
-    justify-content: center;
+    .mainImage {
+    max-width: 80%;
   }
-  
-  .contentImage {
-    min-height: 400px;
-    padding: 1rem;
-  }
-  
   .imageDecoration {
-    width: 90%;
-    height: 90%;
+    width: 85%;
+    height: 85%;
+    top: 7.5%;
+    left: 7.5%;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 48rem) {
+  .mainContent {
+    padding-top: 1rem; /* Reduced from 1.5rem */
+  }
+  .contentImage {
+    min-height: 20vh; /* Reduced from 25vh */
+  }
+    .mainImage {
+    max-width: 75%;
+    border-radius: 0.6rem;
+  }
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-0.3rem); } /* Even less movement on mobile */
+    100% { transform: translateY(0); }
+  }
+}
+
+@media (max-width: 36rem) {
   .gradientText {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 6vw, 1.8rem); /* Reduced sizes */
   }
-  
-  .leadText {
-    font-size: 1.1rem;
-  }
-  
   .ctaGradientButton {
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
+    padding: 0.6rem 1.5rem; /* More compact on mobile */
+    font-size: 0.9rem;
   }
-  
-  .featureItem {
-    font-size: 16px;
-    padding: 8px 15px;
+    .mainImage {
+    max-width: 70%;
   }
-  
- 
+  .imageDecoration {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    opacity: 0.05; /* Very subtle on mobile */
+  }
 }

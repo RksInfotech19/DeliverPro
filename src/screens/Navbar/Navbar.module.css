@@ -1,29 +1,29 @@
 .navbarCustom {
-  /* background:linear-gradient(90deg, #c25100, #601199); */
   background: rgba(255, 255, 255, 0.98) !important;
-  box-shadow: 0 5px 20px rgba(124, 28, 176, 0.15);
- 
+  box-shadow: 0 0.3125rem 1.25rem rgba(124, 28, 176, 0.15);
+
 }
 
 .logo {
-  height: 45px;
+  height: 2rem; /* 32px equivalent */
   width: auto;
 }
 
 .appName {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1rem; /* 16px equivalent */
   color: #222222;
 }
 
 .userAvatarInitials {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   font-size: 0.9rem;
 }
+
 .brandBox {
-  padding: 0px 5px 0px 1px;
-  border-radius: 4px;
+  padding: 0 0.3125rem 0 0.0625rem;
+  border-radius: 0.25rem;
   display: flex;
   align-items: center;
 }
@@ -33,10 +33,9 @@
   font-weight: 500;
   padding: 0.5rem 1rem;
   margin: 0 0.25rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   transition: all 0.3s ease;
 }
-
 .navLink:hover {
   color: var(--nav-link-hover);
   background: rgba(255, 255, 255, 0.1);
