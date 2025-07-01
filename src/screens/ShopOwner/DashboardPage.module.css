@@ -1,11 +1,11 @@
 .dashboardContainer {
     min-height: 100vh;
     padding: 30px;
-    background-color: #fff4ff;
+        background-color: white;
 }
 
 .textWrapper {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 40px;
@@ -20,7 +20,7 @@
 .leftDesign {
     width: 80px;
     height: 80px;
-    background-color: #FF7F50;
+    background-color: #aa50ff5c;
     border-radius: 13px 0px 80px;
     position: absolute;
     top: 0px;
@@ -32,7 +32,7 @@
 .rightDesign {
     width: 80px;
     height: 80px;
-    background-color: #FF7F50;
+    background-color: #aa50ff5c;
     border-radius: 80px 0px 18px;
     position: absolute;
     right: -1px;
@@ -41,10 +41,15 @@
 }
 
 .gradientText {
-    background: linear-gradient(90deg, #7c1cb0, #4b0082);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg,  #8a0cf8,#b1500f); /* Coral to Violet */
+
+  /* Text gradient compatibility */
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -57,12 +62,12 @@
 }
 
 .getStartedButton {
-    background-color: #8A2BE2;
+    background-color: #5e16a2;
     color: white;
     border: none;
-    padding: 10px 20px;
+       padding: 6px 17px;
     border-radius: 25px;
-    font-weight: bold;
+    font-weight: 500;
     display: inline-flex;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -85,34 +90,61 @@
 
 .cardWrapper {
   position: relative;
-  overflow: visible; 
+  overflow: visible;
+  width: 100%; /* Ensures card doesn't overflow container */
 }
 
 .statCard {
-    position: relative;
-    background: white;
-    border: 0.5px solid #d1d5db;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 -6px 0px #FF7F50;
-    margin-bottom: 15px;
-    transition: all 0.4s ease;
-    overflow: visible;
-    z-index: 2;
+  position: relative;
+  background: #ffffff; /* Light violet */
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ebdbff;  /* soft border instead of shadow */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  max-width: 100%;
+    transition: all 0.3s ease;
+  overflow: visible;
+  z-index: 2;
+box-shadow: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
 }
 
 .statCard:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-    border: none;
+      background: #ffffff; /* Light violet */
+  transform: translateY(-0.375rem); /* Reduced from -6px (≈ -0.375rem) */
+  box-shadow: 0 0.75rem 2rem rgba(255, 111, 97, 0.2); /* Smaller highlight */
+  border-color: #ebdbff; /* subtle color change on hover */
 }
+
+
+/* If you have content inside cards, adjust these too */
+.statCard h3 {
+  font-size: 1.1rem; /* Adjust heading size */
+  margin-bottom: 0.5rem;
+}
+
+.statCard p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.statIcon {
+
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.statIcon:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
 
 /* Hidden behind by default */
 .hoverCardCorner {
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: #FF7F50;
+    background-color: #ff7f50;
     border-radius: 12px 12px 12px 0;
     bottom: -5px;
     left: -10px;
@@ -127,11 +159,7 @@
   opacity: 1;
 }
 
-.statIcon {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #4f46e5;
-}
+
 
 .activityCard {
     background: white;

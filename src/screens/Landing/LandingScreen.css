@@ -1,7 +1,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(145deg, #f9f0ff 0%, #ffffff 100%);
+  background-color: rgb(255, 255, 247);
   overflow-y: auto;
 }
 
@@ -52,7 +52,6 @@ body {
 
 .navbar-toggler {
   border: none;
-  padding: 0.5rem;
   font-size: 1.25rem;
 }
 

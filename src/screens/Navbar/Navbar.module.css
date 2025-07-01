@@ -63,7 +63,7 @@
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
-  background-color: var(--primary-violet);
+  background-color: rgb(245, 117, 71);
   color: var(--text-white);
   display: flex;
   align-items: center;

@@ -1,5 +1,6 @@
 .pageWrapper {
   position: relative;
+
   overflow: hidden;
   min-height: 100vh;
   display: flex;                  /* Add flexbox */
@@ -34,7 +35,7 @@
 .formCard {
   position: relative;             /* Ensure it stays above bubbles */
   z-index: 1;                     /* Above the background */
-  background: white;
+  background: #ffffffde;
   padding: 1.5rem;
   border-radius: 0.75rem;
   max-width: 60%;
@@ -102,15 +103,24 @@
 .storeImage.loaded {
   opacity: 1;
 }
-.sectionHeading {
-
+.sectionHeading
+ {
   font-size: 1rem;
   font-weight: 600;
-  color: #54018f;
+  background: linear-gradient(90deg,  #6b20ad,#c44438); /* Coral to Violet */
+
+  /* Text gradient compatibility */
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
 }
 
-.iconColor {
-  color: #ad5803;
+.iconColor{
+color:#e75c50;
   margin-right: 0.5rem;
 }
 
