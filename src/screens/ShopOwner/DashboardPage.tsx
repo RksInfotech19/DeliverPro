@@ -13,7 +13,12 @@ const DashboardPage = () => {
             <Container fluid className={dashboardStyles.mainContent}>
                 <Row className="text-center">
                     <div className={dashboardStyles.textWrapper}>
-                        <h1 className={dashboardStyles.gradientText}>Welcome to <strong>Deliver Pro!</strong></h1>
+                        <div className={dashboardStyles.leftDesign}></div>
+                        <div className={dashboardStyles.rightDesign}></div>
+
+                        <h1 className={dashboardStyles.gradientText}>
+                            Welcome to <strong>Deliver Pro!</strong>
+                        </h1>
                         <p className={`lead ${dashboardStyles.leadText}`}>
                             Manage your deliveries, track orders in real-time, grow your business with our reliable delivery network.
                         </p>

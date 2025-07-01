@@ -8,7 +8,7 @@
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
-  background: var(--gradient-button);
+  background-color: #000000;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -55,7 +55,7 @@
 }
 
 .submitBtn {
-  background: var(--gradient-button);
+  background-color: #932acf;
   border: none;
   color: white;
   font-weight: bold;
@@ -79,7 +79,7 @@
 }
 
 .cancelBtn:hover {
-  background-color: #d50063;
+  background-color: rgb(250, 62, 62);
   color: white;
 }
 

@@ -1,36 +1,63 @@
 .dashboardContainer {
     min-height: 100vh;
     padding: 30px;
-    background: linear-gradient(145deg, #f9f0ff 0%, #ffffff 100%);
-
+    background-color: #fff4ff;
 }
 
 .textWrapper {
-    background-color:white;
+    background-color: white;
     border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 40px;
     margin-bottom: 30px;
+    position: relative; /* Required for absolute children */
+    text-align: center;
+    overflow: visible; 
+    z-index: 1;
+}
+
+/* Left top circle */
+.leftDesign {
+    width: 80px;
+    height: 80px;
+    background-color: #FF7F50;
+    border-radius: 13px 0px 80px;
+    position: absolute;
+    top: 0px;
+    left: -1px;
+    z-index: -1;
+}
+
+/* Right top circle */
+.rightDesign {
+    width: 80px;
+    height: 80px;
+    background-color: #FF7F50;
+    border-radius: 80px 0px 18px;
+    position: absolute;
+    top: 133px;
+    right: -1px;
+    z-index: -1;
 }
 
 .gradientText {
-    background: var(--gradient-text);
+    background: linear-gradient(90deg, #7c1cb0, #4b0082);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
-    display: inline-block;
 }
 
 .leadText {
     margin: 15px 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: #555;
 }
 
 .getStartedButton {
-    background-image: linear-gradient(90deg, #c25100, #601199);
+    background-color: #8A2BE2;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -38,15 +65,18 @@
     font-weight: bold;
     display: inline-flex;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .getStartedButton:hover {
-    background-image: linear-gradient(to right, #23adbd, #b744c8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btnIcon {
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .statsRow {
@@ -64,7 +94,7 @@
     border: 0.5px solid #d1d5db;
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 -6px 0px #eedcf8;
+    box-shadow: 0 -6px 0px #FF7F50;
     margin-bottom: 15px;
     transition: all 0.4s ease;
     overflow: visible;
@@ -82,7 +112,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: #eedcf8;
+    background-color: #FF7F50;
     border-radius: 12px 12px 12px 0;
     bottom: -5px;
     left: -10px;
@@ -93,7 +123,6 @@
 }
 
 .cardWrapper:hover .hoverCardCorner {
-  /* transform: translate(0, 0) scale(1); */
   transform: translate(-15%, 15%) scale(1);
   opacity: 1;
 }
@@ -169,6 +198,7 @@
         width: 100%;
         margin-top: 15px;
         font-size: 1rem;
+        justify-content: center;
     }
 
     .statCard {
@@ -201,6 +231,7 @@
     .getStartedButton {
         font-size: 0.95rem;
         padding: 8px 16px;
+        justify-content: center;
     }
 
     .timelineItem {
