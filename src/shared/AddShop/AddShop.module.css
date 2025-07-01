@@ -1,100 +1,226 @@
 .pageWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;                  /* Add flexbox */
+  justify-content: center;        /* Center horizontally */
+  align-items: center;            /* Center vertically */
+  padding: 1rem;                  /* Add some padding */
+}
+
+/* Bubble animation elements */
+.pageWrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="75" r="4" fill="%239d4edd" opacity="0.2"/><circle cx="15" cy="60" r="3" fill="%237b2cbf" opacity="0.2"/><circle cx="40" cy="80" r="5" fill="%235a189a" opacity="0.2"/><circle cx="10" cy="30" r="4" fill="%239d4edd" opacity="0.2"/><circle cx="30" cy="20" r="3" fill="%237b2cbf" opacity="0.2"/><circle cx="5" cy="50" r="2" fill="%235a189a" opacity="0.2"/></svg>');
+  animation: bubbleFlow 25s linear infinite;
+  z-index: 0;
+}
+
+
+@keyframes bubbleFlow {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100%) translateX(100%);
+  }
 }
 
 .formCard {
+  position: relative;             /* Ensure it stays above bubbles */
+  z-index: 1;                     /* Above the background */
   background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 900px;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  max-width: 60%;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.1);
+  /* Remove margin and let flexbox handle centering */
 }
-
 .formTitle {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 700;
-color:rgb(61, 61, 61);
-  margin-bottom: 2px;
+  font-weight: 600;
+  color: rgb(61, 61, 61);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
 
+/* Updated CSS with rem units */
 .uploadSection {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem; /* reduced from 1rem */
   position: relative;
 }
 
 .uploadCircle {
-  width: 80px;
-  height: 80px;
-  border: 1px dashed #70147f;
+  width: 3.5rem; /* reduced from 5rem */
+  height: 3.5rem; /* reduced from 5rem */
+  border: 0.0625rem dashed #70147f; /* 1px = 0.0625rem */
   border-radius: 50%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #848484;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1rem; /* reduced from 1.25rem */
+  margin-bottom: 0.5rem; /* reduced from 0.5rem */
 }
 
 .uploadButton {
   background-color: #fef8ff;
-  border: 1px solid rgb(193 152 237);
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
+  border: 0.0625rem solid rgb(193 152 237);
+  padding: 0.2rem 0.6rem; /* reduced padding */
+  border-radius: 0.3rem;
   font-weight: 500;
   color: #420079;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* reduced from 0.75rem */
+  font-size: 0.75rem; /* reduced from 0.875rem */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.uploadButton:hover{
+  background-color: #f5dbf9;
+  border: 0.0625rem solid rgb(193 152 237);
+  color: #420079;
+
 }
 
+
 .storeImage {
-  width: 215px;
-  margin-top: -40px;
+  width: 8rem; /* adjust as needed */
+  margin-top: -2rem;
   position: absolute;
   right: 0;
   top: 0;
+   transition: opacity 0.3s ease-in;
 }
-
+.storeImage.loaded {
+  opacity: 1;
+}
 .sectionHeading {
-  margin-top: 2rem;
-  display: inline-block;
-  margin-bottom: 1rem;
-  font-size:20px;
-font-weight: 600;
-    color: #52008d;
 
-
-
+  font-size: 1rem;
+  font-weight: 600;
+  color: #54018f;
 }
 
 .iconColor {
-   color: #52008d;
+  color: #ad5803;
+  margin-right: 0.5rem;
 }
+
+/* AddShop.module.css */
 
 .buttonGroup {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  justify-content:center; /* Align to right */
+  gap: 0.75rem; /* Reduced gap between buttons */
+  margin-top: 1rem;
 }
 
-.cancelBtn {
-  background: white;
-  border: 1px solid #00acc1;
-  color: #00acc1;
+.cancelButton {
+  padding: 0.25rem 0.75rem !important; /* Reduced padding */
+  font-size: 0.75rem !important; /* Smaller font */
+  border: 1px solid #6c757d !important; /* Bootstrap's secondary color */
+  color: #6c757d !important;
+  border-radius: 0.25rem !important;
 }
 
-.saveBtn {
-  background: linear-gradient(to right, #00acc1, #7b1fa2);
-  color: white;
-  border: none;
+.saveButton {
+  padding: 0.25rem 0.75rem !important; /* Reduced padding */
+  font-size: 0.75rem !important; /* Smaller font */
+  background-color: #048c24 !important; /* Bootstrap's success color */
+  border: none !important;
+  border-radius: 0.25rem !important;
 }
-.required{
+
+/* Hover effects */
+.cancelButton:hover {
+  background-color: #ededed !important;
+  color: #505357 !important;
+}
+
+.saveButton:hover {
+  background-color: #218838 !important; /* Darker green on hover */
+}
+.required {
   color: #DE4150;
+  font-size: 0.875rem;
+}
+
+/* Form elements */
+.formLabel {
+  font-size: 0.87rem !important;
+  color: #2e2e2e;
+  margin-bottom: 0.15rem !important;
+}
+
+.formControl, .formSelect {
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  margin-bottom: -0.4rem !important;
+}
+
+.formCheckLabel{
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+
+.formCheckInput{
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .formCard {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  .formCard {
+    max-width: 80%;
+  }
+  
+  .storeImage {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    max-width: 90%;
+    padding: 1rem;
+  }
+  
+  .storeImage {
+    margin: 0 auto;
+    width: 6rem;
+  }
+  
+  .uploadSection {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .formCard {
+    max-width: 100%;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .cancelBtn, .saveBtn {
+    width: 100%;
+  }
 }

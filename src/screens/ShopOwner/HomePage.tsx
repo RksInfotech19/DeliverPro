@@ -19,7 +19,7 @@ const HomePage = () => {
       <Container fluid className={styles.mainContent}>
         <Row className="align-items-center">
           {/* Left side content */}
-          <Col lg={6} className={`${styles.contentText} order-lg-1 order-2`}>
+          <Col lg={6} className={`${styles.contentText} order-lg-1 order-1`}>
             <div className={styles.textWrapper}>
               <div className={styles.contentInner}>
                 <h1 className={styles.gradientText}>Welcome to DeliverPro!</h1>
@@ -46,7 +46,7 @@ const HomePage = () => {
                 
                 <div className={styles.ctaContainer}>
                   <Button className={styles.ctaGradientButton} onClick={handleAddShopClick}>
-                    <Icons.FaPlus className={styles.btnIcon} />
+                    <Icons.FaPlus className={` me-2 ${styles.btnIcon}`} />
                     Add Your Shop
                   </Button>
                 </div>
@@ -55,7 +55,7 @@ const HomePage = () => {
           </Col>
 
           {/* Right side image */}
-          <Col lg={6} className={`${styles.contentImage} order-lg-2 order-1`}>
+          <Col lg={6} className={`${styles.contentImage} order-lg-2 order-2`}>
             <div className={styles.imageWrapper}>
               <div className={styles.imageContainer}>
                 <img 

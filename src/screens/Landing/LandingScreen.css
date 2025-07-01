@@ -1,9 +1,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  width: 100%;
-  min-height: 100vh;
-
+  background: linear-gradient(145deg, #f9f0ff 0%, #ffffff 100%);
   overflow-y: auto;
 }
 

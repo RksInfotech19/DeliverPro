@@ -2,19 +2,17 @@
 .homepageContainer {
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
 }
 
 .mainContent {
-  min-height: calc(100vh - 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: 'Instrument Sans', sans-serif;
   position: relative;
   z-index: 1;
-  padding: 1.5rem 1rem;
+  padding: 3rem 1rem; /* Using rem units */
 }
 
 .contentText {
@@ -23,7 +21,7 @@
 }
 
 .textWrapper {
-  max-width: 36rem; /* Reduced from 40rem */
+  max-width: 36rem;
   margin: 0 auto;
   position: relative;
 }
@@ -31,15 +29,16 @@
 .contentInner {
   position: relative;
   z-index: 2;
+  margin-top: 2rem; /* Added top margin */
 }
 
 .contentImage {
   position: relative;
-  min-height: 25vh; /* Reduced from 30vh */
+  min-height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem; /* Reduced from 1.5rem */
+  padding: 1rem;
 }
 
 /* Text Styles */
@@ -48,44 +47,44 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-weight: 700; /* Reduced from 800 */
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  font-weight: 700;
+  margin-bottom: 1rem;
   line-height: 1.2;
-  font-size: clamp(1.75rem, 4.5vw, 2.75rem); /* Reduced sizes */
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
 }
 
 .leadText {
   color: #4a4a4a;
-  font-size: clamp(0.9rem, 1.3vw, 1.1rem); /* Reduced sizes */
-  margin: 1rem 0; /* Reduced from 1.5rem */
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  margin: 1rem 0;
   line-height: 1.5;
 }
 
 /* Feature List */
 .featureList {
-  margin: 1rem 0; /* Reduced from 1.5rem */
+  margin: 1rem 0;
 }
 
 .featureItem {
   display: flex;
   align-items: center;
-  margin: 0.5rem 0; /* Reduced from 0.75rem */
-  font-size: clamp(0.85rem, 1.1vw, 1rem); /* Reduced sizes */
+  margin: 0.5rem 0;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
   font-weight: 500;
   color: #4a4a4a;
-  padding: 0.5rem 1rem; /* Reduced padding */
-  border-radius: 2rem; /* Reduced from 3.125rem */
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
 }
 
 .featureIcon {
-  margin-right: 0.5rem; /* Reduced from 0.75rem */
+  margin-right: 0.5rem;
   color: #7c1cb0;
-  font-size: clamp(0.9rem, 1.3vw, 1.1rem); /* Reduced sizes */
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
 }
 
 /* CTA Button */
 .ctaContainer {
-  margin: 1.5rem 0; /* Reduced from 2rem */
+  margin: 1.5rem 0;
 }
 
 .ctaGradientButton {
@@ -93,41 +92,41 @@
   border: none;
   color: white;
   font-weight: 500;
-  font-size: clamp(0.9rem, 1.3vw, 1.1rem); /* Reduced sizes */
-  padding: 0.7rem 2rem; /* Reduced from 0.8rem 2.5rem */
-  border-radius: 2rem; /* Reduced from 3.125rem */
-  gap: 0.5rem; /* Reduced from 0.625rem */
-  box-shadow: 0 0.5rem 1rem rgba(124, 28, 176, 0.3); /* Reduced shadow */
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  padding: 0.6rem 1.25rem;
+  border-radius: 1.5rem;
+  gap: 0.4rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(124, 28, 176, 0.25);
 }
 
 /* Image Styles */
 .mainImage {
-  max-width: 85%; /* Slightly more constrained */
+  max-width: 85%;
   height: auto;
-  border-radius: 0.8rem; /* More subtle rounding */
+  border-radius: 0.8rem;
   position: relative;
   z-index: 2;
   animation: float 6s ease-in-out infinite;
-  margin: 0 auto; /* Center the image */
+  margin: 0 auto;
 }
 
 .imageDecoration {
   position: absolute;
-  width: 90%; /* Don't let it touch edges */
-  height: 90%;
+  width: 80%;
+  height: 80%;
   background: linear-gradient(135deg, #8a2be2 0%, #7c1cb0 100%);
-  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; /* More subtle shape */
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
   top: 5%;
   left: 5%;
   z-index: 1;
-  opacity: 0.08; /* More subtle */
-  animation: rotate 25s linear infinite; /* Slower rotation */
+  opacity: 0.08;
+  animation: rotate 25s linear infinite;
 }
 
-/* More subtle animations */
+/* Animations */
 @keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-0.5rem); } /* Reduced movement */
+  50% { transform: translateY(-0.5rem); }
   100% { transform: translateY(0); }
 }
 
@@ -136,61 +135,58 @@
   100% { transform: rotate(360deg); }
 }
 
-
-
-
 /* Responsive Adjustments */
 @media (max-width: 75rem) {
   .textWrapper {
-    max-width: 32rem; /* Reduced from 35rem */
+    max-width: 32rem;
   }
 }
-
-@media (max-width: 62rem) {
+/* Media Queries with px breakpoints but rem units for styling */
+@media (max-width: 992px) { /* 62rem → 992px */
   .gradientText {
-    font-size: clamp(1.5rem, 5vw, 2.25rem); /* Reduced sizes */
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
   }
   .contentText, .contentImage {
-    padding: 0.75rem; /* Reduced from 1rem */
+    padding: 0.75rem;
   }
-    .mainImage {
+  .mainImage {
     max-width: 80%;
   }
   .imageDecoration {
-    width: 85%;
-    height: 85%;
+    width: 75%;
+    height: 75%;
     top: 7.5%;
     left: 7.5%;
   }
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 768px) { /* 48rem → 768px */
   .mainContent {
-    padding-top: 1rem; /* Reduced from 1.5rem */
+    padding-top: 2rem;
   }
   .contentImage {
-    min-height: 20vh; /* Reduced from 25vh */
+    min-height: 20vh;
   }
-    .mainImage {
+  .mainImage {
     max-width: 75%;
     border-radius: 0.6rem;
   }
   @keyframes float {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-0.3rem); } /* Even less movement on mobile */
+    50% { transform: translateY(-0.3rem); }
     100% { transform: translateY(0); }
   }
 }
 
-@media (max-width: 36rem) {
+@media (max-width: 576px) { /* 36rem → 576px */
   .gradientText {
-    font-size: clamp(1.3rem, 6vw, 1.8rem); /* Reduced sizes */
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
   }
   .ctaGradientButton {
-    padding: 0.6rem 1.5rem; /* More compact on mobile */
+    padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
   }
-    .mainImage {
+  .mainImage {
     max-width: 70%;
   }
   .imageDecoration {
@@ -198,6 +194,9 @@
     height: 80%;
     top: 10%;
     left: 10%;
-    opacity: 0.05; /* Very subtle on mobile */
+    opacity: 0.05;
+  }
+  .contentInner {
+    margin-top: 1rem;
   }
 }

@@ -2,14 +2,19 @@
 .homeLayout {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, #f9f0ff 0%, #ffffff 100%);
-  min-height: 100vh;
+
+
 }
 
-/* Regular page styles */
 .mainLayout {
-  background-color: #ffffff;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center;     /* Horizontal center */
+  background-color: #ffffff;
+  overflow: hidden;        /* Prevent unnecessary scroll */
+  position: relative;
 }
 
 /* Decorative elements (homepage only) */
