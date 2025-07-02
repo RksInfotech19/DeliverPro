@@ -6,6 +6,7 @@ import type { Order } from "../../models/order.model";
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { OrderService } from "../../service/Order.service";
+import SharedButton from "../../shared/SharedButton";
 
 const NewDeliveryPage = () => {
   const [productType, setProductType] = useState<any[]>([]);
@@ -128,8 +129,10 @@ const NewDeliveryPage = () => {
                 </Row>
 
                 <div className={NewDeliveryStyle.buttonGroup}>
-                    <button type="submit" className={NewDeliveryStyle.submitBtn}>Submit Request</button>
-                    <button type="button" className={NewDeliveryStyle.cancelBtn} onClick={handleCancel}>Cancel</button>
+                
+                    <SharedButton label="Submit" variant="primary" type="submit" />
+                    
+                    <SharedButton label="Cancel" variant="cancel" onClick={handleCancel} />
                 </div>
                 </form>
               </div>

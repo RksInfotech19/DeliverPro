@@ -1,0 +1,38 @@
+.button {
+  padding: 0.45rem 1.2rem;
+  font-size: 0.88rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* 🌈 Gradient Submit Button */
+.primary {
+  background: linear-gradient(135deg, #7C1CB0, #F57547);
+  color: white;
+  box-shadow: 0 3px 10px rgba(124, 28, 176, 0.25);
+}
+.primary:hover {
+  background: linear-gradient(135deg, #6c0ea4, #e9632f);
+  box-shadow: 0 4px 12px rgba(124, 28, 176, 0.3);
+}
+
+/* ❌ Cancel */
+.cancel {
+  background-color: #e0e0e0;
+  color: #333;
+}
+.cancel:hover {
+  background-color: #d5d5d5;
+}
+
+/* 🗑️ Delete */
+.delete {
+  background-color: #f44336;
+  color: white;
+}
+.delete:hover {
+  background-color: #d32f2f;
+}

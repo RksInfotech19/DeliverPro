@@ -1,5 +1,5 @@
 .deliveryContainer {
-  background-color: #f8f9f9;
+  background-color: #ffffff;
   min-height: 100vh;
   padding: 3%;
 }
@@ -54,34 +54,9 @@
   justify-content: center;
 }
 
-.submitBtn {
-  background-color: #932acf;
-  border: none;
-  color: white;
-  font-weight: bold;
-  font-size: 0.8rem;
-  border-radius: 25px;
-}
 
-.submitBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(199, 218, 218, 0.4);
-}
 
-.cancelBtn {
-  background-color: transparent;
-  border: 2px solid #d50063;
-  color: #d50063;
-  padding: 10px 30px;
-  font-weight: bold;
-  border-radius: 25px;
-  min-width: 120px;
-}
 
-.cancelBtn:hover {
-  background-color: rgb(250, 62, 62);
-  color: white;
-}
 
 
 @media screen and (max-width: 768px) {

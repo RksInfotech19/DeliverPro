@@ -36,7 +36,7 @@ function App() {
     } />
 
     <Route path="dashboard" element={<DashboardPage />} />
-    <Route path="delivery-request/:id" element={<NewDeliveryPage />} />
+    <Route path="delivery-request/:id" element={<BackgroundLayout><NewDeliveryPage /></BackgroundLayout>} />
     <Route path='order-list' element={<OrdersList />} />
   </Route>
   <Route path="/landing-page" element={<DeliverPro />} />

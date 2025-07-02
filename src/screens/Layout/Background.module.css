@@ -8,10 +8,8 @@
 
 .mainLayout {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertical center */
-  align-items: center;     /* Horizontal center */
+
+    /* Horizontal center */
   background-color: rgb(255, 255, 255);
   overflow: hidden;        /* Prevent unnecessary scroll */
   position: relative;

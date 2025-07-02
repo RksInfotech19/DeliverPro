@@ -28,24 +28,56 @@
   align-items: center;
 }
 
+/* Navigation Items */
 .navLink {
-  color: var(--text-dark);
+  color: #4A5568 !important; /* Medium gray for text */
   font-weight: 500;
-  padding: 0.4rem 0.8rem; /* Reduced padding */
-  margin: 0 0.2rem; /* Reduced margin */
-  border-radius: 0.25rem;
-  transition: all 0.3s ease;
-  font-size: 0.9rem; /* Added font size */
-}
-.navLink:hover {
-  color: var(--nav-link-hover);
-  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.9rem;
+  margin: 0 0.15rem;
+  border-radius: 0.35rem;
+  transition: all 0.2s ease;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
 }
 
+/* Icons - consistent violet color */
+.navLink svg {
+  color: #d96d42 !important; /* Violet for all icons */
+  margin-right: 0.4rem;
+  width: 0.85rem;  /* Controls icon width */
+  height: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+/* Text - dark gray */
+.navLink span {
+  color: #4A5568 !important; /* Medium gray for text */
+}
+
+/* Hover state */
+.navLink:hover {
+  background: rgba(229, 139, 3, 0.108) !important;
+}
+
+.navLink:hover span {
+  color: #2D3748 !important; /* Darker gray on hover */
+}
+
+/* Active state - subtle yet clear */
 .navLink.active {
-  color: var(--nav-link-active);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(124, 28, 176, 0.08) !important;
+}
+
+.navLink.active span {
+  color: #7C1CB0 !important; /* Violet text when active */
   font-weight: 600;
+}
+
+.navLink.active svg {
+  color: #7C1CB0 !important; /* Violet remains same for icons */
+  transform: scale(1.05);
+ 
 }
 
 /* User Info Section */
@@ -84,10 +116,16 @@
 }
 
 .userRoleBadge {
-  font-size: 0.75rem; /* Reduced from 15px to rem */
-  color: rgb(0, 0, 0);
-  font-weight: 500;
+  font-size: 0.6rem;
+  color: #7C1CB0; /* Violet color */
+  font-weight: 600;
+  background: rgba(124, 28, 176, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
 
 /* Responsive adjustments - breakpoints in px */
 @media (max-width: 992px) {
