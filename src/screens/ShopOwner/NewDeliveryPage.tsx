@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import { LookupLabelService } from "../../service/lookupLabel.service";
 import type { Order } from "../../models/order.model";
 import { useNavigate } from "react-router-dom";
+import { useParams } from 'react-router-dom';
+import { OrderService } from "../../service/Order.service";
 
 const NewDeliveryPage = () => {
   const [productType, setProductType] = useState<any[]>([]);
   const [orderDetails, setOrderDetails] = useState <Order>({
-    orderID: 0,
+    orderId: 0,
     shopID: 0,
     productType: 0,
     productName: "",
@@ -17,10 +19,16 @@ const NewDeliveryPage = () => {
     customerName: "",
     customerPhone: "",
     specialInstructions: "",
-    deliveryDate: ""
+    deliveryDate: "",
+    status: 0,
+    createdBy: null,    
+    updatedBy: null,
+    createdDate: '',
+    updatedDate: null
   });
 
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const handleCancel = () => {
     navigate("/dashboard");
@@ -31,9 +39,16 @@ const NewDeliveryPage = () => {
       const service = LookupLabelService.getInstance();
       const categories = await service.getCategories();
       setProductType(categories);
+      if (id) {
+        setOrderDetails((prev) => ({
+          ...prev,
+          shopID: Number(id)
+        }));
+      }
     };  
+    console.log('Order ID from URL:', id);
     fetchProductTypes();
-  }, []);
+  }, [id]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -45,7 +60,13 @@ const NewDeliveryPage = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    try {
+      const service = OrderService.getInstance();
+      service.addOrder(orderDetails);
+      alert("Order request submitted successfully!");
+    }catch (error) {
+      console.error("Error submitting order:", error);
+    }
     // Here you would typically send the orderDetails to your backend
     console.log("Order Details Submitted:", orderDetails);
   };

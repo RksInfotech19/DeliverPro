@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { developmentConfig } from '../configuration/development';
+import { environment } from '../configuration/development';
 
-const API_URL = `${developmentConfig.apiUrl}/${developmentConfig.lookupService}/all`;
+const API_URL = `${environment.apiUrl}/${environment.lookupService}/all`;
 
 export class LookupService {
   private static instance: LookupService;

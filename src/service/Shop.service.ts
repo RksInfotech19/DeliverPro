@@ -1,10 +1,10 @@
 import axios from "axios";
-import { developmentConfig } from "../configuration/development";
+import { environment } from "../configuration/development";
 
 export class ShopService {
   private static instance: ShopService;
-  private apiUrl = `${developmentConfig.apiUrl}/${developmentConfig.shopService}/all`;
-  private createApi = `${developmentConfig.apiUrl}/${developmentConfig.shopService}/create`;  
+  private apiUrl = `${environment.apiUrl}/${environment.shopService}/all`;
+  private createApi = `${environment.apiUrl}/${environment.shopService}/create`;  
   private constructor() {}
 
   public static getInstance(): ShopService {

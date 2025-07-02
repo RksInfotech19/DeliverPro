@@ -1,6 +1,5 @@
 export interface Order {
-    orderID: number;
-    shopID: number;
+    orderId: number;
     productType: number;
     productName: string;
     weight: number;
@@ -9,4 +8,10 @@ export interface Order {
     customerPhone: string;
     specialInstructions: string;
     deliveryDate: string;
+    shopID: number;
+    status: number;
+    createdBy: string | null;
+    createdDate: string;
+    updatedDate: string | null;
+    updatedBy: string | null;
 }

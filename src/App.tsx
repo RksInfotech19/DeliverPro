@@ -10,6 +10,7 @@ import BackgroundLayout from './screens/Layout/BackgroundLayout';
 import NewDeliveryPage from './screens/ShopOwner/NewDeliveryPage';
 import { LookupLabelService } from './service/lookupLabel.service';
 import { useEffect } from 'react';
+import OrdersList from './screens/ShopOwner/OrderListPage';
 
 function App() {
 
@@ -35,7 +36,8 @@ function App() {
     } />
 
     <Route path="dashboard" element={<DashboardPage />} />
-    <Route path="delivery-request" element={<NewDeliveryPage />} />
+    <Route path="delivery-request/:id" element={<NewDeliveryPage />} />
+    <Route path='order-list' element={<OrdersList />} />
   </Route>
 
   <Route path="/landing-page" element={<DeliverPro />} />

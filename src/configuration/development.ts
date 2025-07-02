@@ -1,6 +1,6 @@
-export const developmentConfig = {
+export const environment = {
     apiUrl: 'http://localhost:3000/api',
-    shopService:'shop',
-    orderService: 'order',
+    shopService:'shops',
+    orderService: 'orders',
     lookupService: 'lookup',
 }

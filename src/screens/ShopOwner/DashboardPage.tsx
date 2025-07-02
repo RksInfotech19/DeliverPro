@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const DashboardPage = () => {
     const navigate = useNavigate();
     const handleGetStarted = () => {
-        navigate('/delivery-request');
+        navigate('/delivery-request/8');
     };
 
     return (

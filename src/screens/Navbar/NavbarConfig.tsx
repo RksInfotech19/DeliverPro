@@ -23,7 +23,7 @@ export const ROLE_BASED_NAVIGATION: Record<DeliverProUserRole, { navItems: Navig
     navItems: [
       { path: '/my-shop', label: 'My Shop', icon: 'FaStore', isActive: true },
       { path: '/products', label: 'Products', icon: 'FaBoxes' },
-      { path: '/orders', label: 'Orders', icon: 'FaClipboardList' },
+      { path: '/order-list', label: 'Orders', icon: 'FaClipboardList' },
       { path: '/deliveries', label: 'Deliveries', icon: 'FaTruck' },
       { path: '/reports', label: 'Reports', icon: 'FaChartBar' }
     ]
