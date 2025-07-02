@@ -1,12 +1,15 @@
 .pageWrapper {
   position: relative;
-
   overflow: hidden;
   min-height: 100vh;
-  display: flex;                  /* Add flexbox */
-  justify-content: center;        /* Center horizontally */
-  align-items: center;            /* Center vertically */
-  padding: 1rem;                  /* Add some padding */
+  display: flex;
+  /* Add flexbox */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  padding: 1rem;
+  /* Add some padding */
 }
 
 /* Bubble animation elements */
@@ -27,14 +30,17 @@
   0% {
     transform: translateY(0) translateX(0);
   }
+
   100% {
     transform: translateY(-100%) translateX(100%);
   }
 }
 
 .formCard {
-  position: relative;             /* Ensure it stays above bubbles */
-  z-index: 1;                     /* Above the background */
+  position: relative;
+  /* Ensure it stays above bubbles */
+  z-index: 1;
+  /* Above the background */
   background: #ffffffde;
   padding: 1.5rem;
   border-radius: 0.75rem;
@@ -43,6 +49,7 @@
   box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.1);
   /* Remove margin and let flexbox handle centering */
 }
+
 .formTitle {
   font-weight: 600;
   color: rgb(61, 61, 61);
@@ -53,61 +60,73 @@
 /* Updated CSS with rem units */
 .uploadSection {
   text-align: center;
-  margin-bottom: 0.8rem; /* reduced from 1rem */
+  margin-bottom: 0.8rem;
+  /* reduced from 1rem */
   position: relative;
 }
 
 .uploadCircle {
-  width: 3.5rem; /* reduced from 5rem */
-  height: 3.5rem; /* reduced from 5rem */
-  border: 0.0625rem dashed #70147f; /* 1px = 0.0625rem */
+  width: 3.5rem;
+  /* reduced from 5rem */
+  height: 3.5rem;
+  /* reduced from 5rem */
+  border: 0.0625rem dashed #70147f;
+  /* 1px = 0.0625rem */
   border-radius: 50%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #848484;
-  font-size: 1rem; /* reduced from 1.25rem */
-  margin-bottom: 0.5rem; /* reduced from 0.5rem */
+  font-size: 1rem;
+  /* reduced from 1.25rem */
+  margin-bottom: 0.5rem;
+  /* reduced from 0.5rem */
 }
 
 .uploadButton {
   background-color: #fef8ff;
   border: 0.0625rem solid rgb(193 152 237);
-  padding: 0.2rem 0.6rem; /* reduced padding */
+  padding: 0.2rem 0.6rem;
+  /* reduced padding */
   border-radius: 0.3rem;
   font-weight: 500;
   color: #420079;
-  margin-bottom: 0.5rem; /* reduced from 0.75rem */
-  font-size: 0.75rem; /* reduced from 0.875rem */
+  margin-bottom: 0.5rem;
+  /* reduced from 0.75rem */
+  font-size: 0.75rem;
+  /* reduced from 0.875rem */
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
 }
-.uploadButton:hover{
+
+.uploadButton:hover {
   background-color: #f5dbf9;
   border: 0.0625rem solid rgb(193 152 237);
   color: #420079;
 
 }
 
-
 .storeImage {
-  width: 8rem; /* adjust as needed */
+  width: 8rem;
+  /* adjust as needed */
   margin-top: -2rem;
   position: absolute;
   right: 0;
   top: 0;
-   transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
+
 .storeImage.loaded {
   opacity: 1;
 }
-.sectionHeading
- {
+
+.sectionHeading {
   font-size: 1rem;
   font-weight: 600;
-  background: linear-gradient(90deg,  #6b20ad,#c44438); /* Coral to Violet */
+  background: linear-gradient(90deg, #6b20ad, #c44438);
+  /* Coral to Violet */
 
   /* Text gradient compatibility */
   background-clip: text;
@@ -119,8 +138,8 @@
   display: inline-block;
 }
 
-.iconColor{
-color:#e75c50;
+.iconColor {
+  color: #e75c50;
   margin-right: 0.5rem;
 }
 
@@ -128,23 +147,31 @@ color:#e75c50;
 
 .buttonGroup {
   display: flex;
-  justify-content:center; /* Align to right */
-  gap: 0.75rem; /* Reduced gap between buttons */
+  justify-content: center;
+  /* Align to right */
+  gap: 0.75rem;
+  /* Reduced gap between buttons */
   margin-top: 1rem;
 }
 
 .cancelButton {
-  padding: 0.25rem 0.75rem !important; /* Reduced padding */
-  font-size: 0.75rem !important; /* Smaller font */
-  border: 1px solid #6c757d !important; /* Bootstrap's secondary color */
+  padding: 0.25rem 0.75rem !important;
+  /* Reduced padding */
+  font-size: 0.75rem !important;
+  /* Smaller font */
+  border: 1px solid #6c757d !important;
+  /* Bootstrap's secondary color */
   color: #6c757d !important;
   border-radius: 0.25rem !important;
 }
 
 .saveButton {
-  padding: 0.25rem 0.75rem !important; /* Reduced padding */
-  font-size: 0.75rem !important; /* Smaller font */
-  background-color: #048c24 !important; /* Bootstrap's success color */
+  padding: 0.25rem 0.75rem !important;
+  /* Reduced padding */
+  font-size: 0.75rem !important;
+  /* Smaller font */
+  background-color: #048c24 !important;
+  /* Bootstrap's success color */
   border: none !important;
   border-radius: 0.25rem !important;
 }
@@ -156,8 +183,10 @@ color:#e75c50;
 }
 
 .saveButton:hover {
-  background-color: #218838 !important; /* Darker green on hover */
+  background-color: #218838 !important;
+  /* Darker green on hover */
 }
+
 .required {
   color: #DE4150;
   font-size: 0.875rem;
@@ -170,19 +199,20 @@ color:#e75c50;
   margin-bottom: 0.15rem !important;
 }
 
-.formControl, .formSelect {
+.formControl,
+.formSelect {
   font-size: 0.8rem;
   border-radius: 0.5rem;
   margin-bottom: -0.4rem !important;
 }
 
-.formCheckLabel{
+.formCheckLabel {
   display: inline-block;
   margin-right: 1rem;
   font-size: 0.8rem;
 }
 
-.formCheckInput{
+.formCheckInput {
   margin-right: 0.25rem;
   font-size: 0.875rem;
 }
@@ -198,7 +228,7 @@ color:#e75c50;
   .formCard {
     max-width: 80%;
   }
-  
+
   .storeImage {
     width: 8rem;
   }
@@ -209,12 +239,12 @@ color:#e75c50;
     max-width: 90%;
     padding: 1rem;
   }
-  
+
   .storeImage {
     margin: 0 auto;
     width: 6rem;
   }
-  
+
   .uploadSection {
     margin-bottom: 0.5rem;
   }
@@ -224,13 +254,14 @@ color:#e75c50;
   .formCard {
     max-width: 100%;
   }
-  
+
   .buttonGroup {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
-  .cancelBtn, .saveBtn {
+
+  .cancelBtn,
+  .saveBtn {
     width: 100%;
   }
 }

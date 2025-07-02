@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './LandingScreen.css';
+import './LandingScreen.module.css';
 import logo from '../../assets/images/logo.png';
 import HomeBanner from '../../assets/images/home-banner.png';
 import { Icons } from '../../shared/icons';

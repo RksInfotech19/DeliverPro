@@ -39,7 +39,6 @@ function App() {
     <Route path="delivery-request/:id" element={<NewDeliveryPage />} />
     <Route path='order-list' element={<OrdersList />} />
   </Route>
-
   <Route path="/landing-page" element={<DeliverPro />} />
 </Routes>
 
