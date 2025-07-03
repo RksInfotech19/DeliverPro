@@ -23,7 +23,7 @@
   align-items: center;
   gap: 8px;
   font-size: 1rem;
-  background: linear-gradient(90deg,coral, rgb(218, 45, 218));
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
   background-clip: text;  
   -webkit-background-clip: text;
   color: transparent;
@@ -35,7 +35,7 @@
 .cardIcon {
   width: 18px;
   height: 18px;
-  color: coral;
+  color: #7C1CB0;
 }
 
 .detailItem {
@@ -81,7 +81,7 @@
   align-items: center;
   gap: 8px;
   font-size: 1rem;
-  background: linear-gradient(90deg,coral, rgb(218, 45, 218));
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
   background-clip: text;  
   -webkit-background-clip: text;
   color: transparent;

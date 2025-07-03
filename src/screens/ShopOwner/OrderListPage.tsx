@@ -215,7 +215,7 @@ const OrdersList: React.FC = () => {
       <Container fluid className={styles.container}>
         <div className={styles.wrapper}>
           {/* Header */}
-          <div className={`${styles.header} text-center mb-5`}>
+          <div className={`${styles.header} text-center`}>
             <h1 className={styles.pageTitle}>Orders List</h1>
           </div>
 
