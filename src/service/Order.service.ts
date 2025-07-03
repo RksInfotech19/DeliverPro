@@ -10,6 +10,7 @@ interface OrdersResponse {
 export class OrderService {
     private static instance: OrderService;
     private getUrl = `${environment.apiUrl}/${environment.orderService}/all`;
+    private getById = `${environment.apiUrl}/${environment.orderService}`;
     private createApi = `${environment.apiUrl}/${environment.orderService}/create`;
     
     private constructor() {}
@@ -27,6 +28,16 @@ export class OrderService {
         return response.data;
         } catch (error) {
         console.error('Error fetching orders:', error);
+        throw error;
+        }
+    }
+
+    public async getOrderById(orderId: string): Promise<Order> {
+        try {
+        const response = await axios.get<Order>(`${this.getById}/${orderId}`);
+        return response.data;
+        } catch (error) {
+        console.error("Error fetching order by ID:", error);
         throw error;
         }
     }

@@ -49,4 +49,8 @@ export class LookupLabelService {
   getStatus(): any[] {
     return this.lutData?.status ?? [];
   }
+
+  getCategoryById(Id:number):string{
+    return this.lutData?.categories.find((category:any) => category.categoryID ==Id)?.categoryName ?? 'Not Available';
+  }
 }

@@ -50,6 +50,15 @@ import {
   Search,
   Filter,
   Calendar,
+  Scale, 
+  Tag, 
+  MessageSquare, 
+  User, 
+  Phone,  
+  Store, 
+  Mail, 
+  AlertCircle,
+  RefreshCw,
 } from "lucide-react";
 
 export const Icons = {
@@ -104,4 +113,13 @@ export const Icons = {
   Search,
   Filter,
   Calendar,
+  Scale, 
+  Tag, 
+  MessageSquare, 
+  User, 
+  Phone,  
+  Store, 
+  Mail, 
+  AlertCircle,
+  RefreshCw
 };

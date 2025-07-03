@@ -1,8 +1,5 @@
 /* Base Styles */
-.container {
-  padding: 60px;
-  min-height: 100vh;
-}
+
 
 .wrapper {
   max-width: 1600px;
