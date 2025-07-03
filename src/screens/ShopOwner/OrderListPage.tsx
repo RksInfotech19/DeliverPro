@@ -5,6 +5,7 @@ import { OrderService } from '../../service/Order.service';
 import type { Order } from '../../models/order.model';
 import { Card, CardBody, Col, Row, Container, Badge, Button, Form, InputGroup } from 'react-bootstrap';
 import OrderDetailsModal from '../../pop-up-modals/orderDetailModal';
+import { LookupLabelService } from '../../service/lookupLabel.service';
 
 type OrderCardProps = {
   order: Order;
@@ -21,26 +22,35 @@ type OrderStatusText = 'In Transit' | 'Order Placed' | 'Cancelled'| 'Driver Assi
 const OrdersList: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [statusFilter, setStatusFilter] = useState<'All' | 'In Transit' | 'Pending Pickup' | 'Delivered'>('All');
+  const [statusFilter, setStatusFilter] = useState<any>('All');
   const [activeTab, setActiveTab] = useState<'inProgress' | 'completed'>('inProgress');
   const [orders, setOrders] = useState<OrdersResponse>({ inProgress: [], completed: [] });
-  const [isLoading, setIsLoading] = useState(true);
   const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null);
+  const [status, setStatus] = useState<any[]>([]);
+
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        setIsLoading(true);
         const orderService = OrderService.getInstance();
         const data = await orderService.getOrders();
         setOrders(data);
       } catch (error) {
         console.error('Error fetching orders:', error);
-      } finally {
-        setIsLoading(false);
       }
     };
 
+    const fetchStatus = async() =>{
+      try{
+        const lookupLabelService = LookupLabelService.getInstance();
+        const status = await lookupLabelService.getStatus();
+        setStatus(status);
+      }catch(err){
+        console.error('Error fetching status:', err);
+      }
+    }
+
     fetchOrders();
+    fetchStatus();
   }, []);
 
   const getStatusText = (status: number): OrderStatusText => {
@@ -189,19 +199,6 @@ const OrdersList: React.FC = () => {
       </Card>
     );
   };
-
-  if (isLoading) {
-    return (
-      <Container fluid className={styles.container}>
-        <div className="d-flex justify-content-center align-items-center min-vh-100">
-          <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      </Container>
-    );
-  }
-
   
 
   return (
@@ -256,9 +253,9 @@ const OrdersList: React.FC = () => {
                     className={styles.filterSelect}
                   >
                     <option value="All">All Status</option>
-                    <option value="In Transit">In Transit</option>
-                    <option value="Pending Pickup">Pending Pickup</option>
-                    <option value="Delivered">Delivered</option>
+                    {status.map((data:any)=>(
+                      <option key={data.Id} value={data.Status}>{data.Status}</option>
+                    ))}
                   </Form.Select>
                 </InputGroup>
               </Col>

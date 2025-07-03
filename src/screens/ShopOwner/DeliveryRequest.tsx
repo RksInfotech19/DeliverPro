@@ -65,7 +65,7 @@ const DeliveryRequest = () => {
     try {
       const service = OrderService.getInstance();
       service.addOrder(orderDetails);
-      alert("Order request submitted successfully!");
+      navigate("/order-list");
     } catch (error) {
       console.error("Error submitting order:", error);
     }
