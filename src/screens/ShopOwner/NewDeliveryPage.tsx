@@ -7,10 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { OrderService } from "../../service/Order.service";
 import SharedButton from "../../shared/SharedButton";
+import { Icons } from "../../shared/icons";
 
 const NewDeliveryPage = () => {
   const [productType, setProductType] = useState<any[]>([]);
-  const [orderDetails, setOrderDetails] = useState <Order>({
+  const [orderDetails, setOrderDetails] = useState<Order>({
     orderId: 0,
     shopID: 0,
     productType: 0,
@@ -47,11 +48,11 @@ const NewDeliveryPage = () => {
         }));
       }
     };  
-    console.log('Order ID from URL:', id);
     fetchProductTypes();
   }, [id]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | 
+    HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setOrderDetails((prevDetails) => ({
       ...prevDetails,
@@ -65,77 +66,89 @@ const NewDeliveryPage = () => {
       const service = OrderService.getInstance();
       service.addOrder(orderDetails);
       alert("Order request submitted successfully!");
-    }catch (error) {
+    } catch (error) {
       console.error("Error submitting order:", error);
     }
-    // Here you would typically send the orderDetails to your backend
     console.log("Order Details Submitted:", orderDetails);
   };
-
+  
   return (
     <div className={NewDeliveryStyle.deliveryContainer}>
-      <h1 className={NewDeliveryStyle.gradientTitle}>New Delivery Request</h1>
-      <Container className="p-4">
-        <Row>
-          <Col md={12}>
+      <Container className={NewDeliveryStyle.container}>
+        <Row className="justify-content-center">
+          <Col xl={8} lg={10} md={12}>
             <Card className={NewDeliveryStyle.formCard}>
-              <div className={NewDeliveryStyle.cardBody}>
-                {/* <h6 className={NewDeliveryStyle.formTitle}>
-                  Fill in the details to schedule a pickup and delivery
-                </h6> */}
-                <form className={NewDeliveryStyle.formSection} onSubmit={handleSubmit}>
-                <Row className="gy-4">
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Product Type</label>
-                    <select className="form-control" id="productType" value={Number(orderDetails.productType)} onChange={handleInputChange} required>
-                        <option value="0" disabled>Select product type</option>
-                        {productType.map((type:any)=>(
-                            <option key={type.categoryID} value={type.categoryID}>
-                                {type.categoryName}
-                            </option>
-                        ))}
-                    </select>
-                    </Col>
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Product Name</label>
-                    <input type="text" className="form-control" id="productName" value={orderDetails.productName} onChange={handleInputChange} placeholder="e.g., Grocery Package" required />
-                    </Col>
-
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Approx. Weight (kg)</label>
-                    <input type="text" className="form-control" id="weight" value={orderDetails.weight} onChange={handleInputChange} placeholder="e.g., 2.5" required />
-                    </Col>
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Delivery Address</label>
-                    <input type="text" className="form-control" id="address" value={orderDetails.address} onChange={handleInputChange} placeholder="Customer's full address" required />
-                    </Col>
-
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Customer Name</label>
-                    <input type="text" className="form-control" id="customerName" value={orderDetails.customerName} onChange={handleInputChange} placeholder="Customer's full name" required />
-                    </Col>
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Customer Phone</label>
-                    <input type="text" className="form-control" id="customerPhone" value={orderDetails.customerPhone} onChange={handleInputChange} placeholder="Customer's phone number" required />
-                    </Col>
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Delivery Date</label>
-                    <input type="date" className="form-control" id="deliveryDate" value={orderDetails.deliveryDate} onChange={handleInputChange} required />
-                    </Col>
-                    <Col md={6}>
-                    <label className={NewDeliveryStyle.inputLabel}>Special Instructions</label>
-                    <textarea rows={2} className="form-control" id="specialInstructions" value={orderDetails.specialInstructions} onChange={handleInputChange} placeholder="Any special handling instructions" />
-                    </Col>
-                </Row>
-
-                <div className={NewDeliveryStyle.buttonGroup}>
-                
-                    <SharedButton label="Submit" variant="primary" type="submit" />
-                    
-                    <SharedButton label="Cancel" variant="cancel" onClick={handleCancel} />
+              <Card.Body className={NewDeliveryStyle.cardBody}>
+                <div className="text-center mb-4">
+                  <h1 className={NewDeliveryStyle.gradientTitle}> 
+                    <Icons.FaPaperPlane className={`me-1 ${NewDeliveryStyle.paperPlane}`}/> Delivery Request
+                  </h1>
                 </div>
+                <form onSubmit={handleSubmit}>
+                  <Row className="gy-3">
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Product Type</label>
+                      <select className="form-select" id="productType" value={orderDetails.productType ?? 0}
+                        onChange={handleInputChange} required>
+                        <option value="0" disabled>Select product type</option>
+                        {productType.map((type:any) => (
+                          <option key={type.categoryID} value={type.categoryID}>
+                            {type.categoryName}
+                          </option>
+                        ))}
+                      </select>
+                    </Col>
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Product Name</label>
+                      <input type="text" className="form-control" id="productName" 
+                        value={orderDetails.productName} onChange={handleInputChange} 
+                        placeholder="e.g., Grocery Package" required />
+                    </Col>
+
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Approx. Weight (kg)</label>
+                      <input type="text" className="form-control" id="weight" 
+                        value={orderDetails.weight} onChange={handleInputChange} 
+                        placeholder="e.g., 2.5" required />
+                    </Col>
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Delivery Address</label>
+                      <input type="text" className="form-control" id="address" 
+                        value={orderDetails.address} onChange={handleInputChange} 
+                        placeholder="Customer's full address" required />
+                    </Col>
+
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Customer Name</label>
+                      <input type="text" className="form-control" id="customerName" 
+                        value={orderDetails.customerName} onChange={handleInputChange} 
+                        placeholder="Customer's full name" required />
+                    </Col>
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Customer Phone</label>
+                      <input type="text" className="form-control" id="customerPhone" 
+                        value={orderDetails.customerPhone} onChange={handleInputChange} 
+                        placeholder="Customer's phone number" required />
+                    </Col>
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Delivery Date</label>
+                      <input type="date" className="form-control" id="deliveryDate" 
+                        value={orderDetails.deliveryDate} onChange={handleInputChange} required />
+                    </Col>
+                    <Col md={6}>
+                      <label className={NewDeliveryStyle.inputLabel}>Special Instructions</label>
+                      <textarea rows={2} className="form-control" id="specialInstructions" 
+                        value={orderDetails.specialInstructions} onChange={handleInputChange} 
+                        placeholder="Any special handling instructions" />
+                    </Col>
+                  </Row>
+
+                  <div className={NewDeliveryStyle.buttonGroup}>
+                    <SharedButton label="Submit" variant="primary" type="submit" />
+                    <SharedButton label="Cancel" variant="cancel" onClick={handleCancel} />
+                  </div>
                 </form>
-              </div>
+              </Card.Body>
             </Card>
           </Col>
         </Row>

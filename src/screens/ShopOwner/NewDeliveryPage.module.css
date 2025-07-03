@@ -1,79 +1,176 @@
+/* NewDeliveryPage.module.css */
+
 .deliveryContainer {
   background-color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
   min-height: 100vh;
-  padding: 3%;
+
 }
+
 
 .gradientTitle {
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  background-color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #7C1CB0, #e1693d);
+  background-size: 200% 200%;
+  display: inline-block;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  animation: gradientShift 8s ease infinite;
 }
 
 .formCard {
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: none;
-  padding: 25px;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.08);
+  padding: 2rem;
   background: #ffffff;
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.formCard:hover {
+  animation: cardElevate 0.3s ease-out forwards;
 }
 
 .cardBody {
-  padding: 10px;
-}
-
-.formTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #222;
+  padding: 0.5rem;
 }
 
 .formSection {
-  margin-top: 10px;
+  margin-top: 1rem;
+}
+
+.formSection > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .inputLabel {
-  font-weight: 400;
-  margin-bottom: 6px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
   display: block;
-  color: #333;
+  color: #202020;
+}
+
+.form-control {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  animation: inputFocus 0.3s ease-out forwards;
+  outline: none;
 }
 
 .buttonGroup {
-  margin-top: 30px;
+  margin-top: 1.5rem;
   display: flex;
-  gap: 20px;
+  gap: 1rem;
   justify-content: center;
 }
 
+.buttonGroup button[type="submit"] {
+  transition: all 0.3s ease;
+}
 
+.buttonGroup button[type="submit"]:hover {
+  animation: pulse 1s ease infinite;
+}
 
+.paperPlane {
+  color: #7C1CB0;
+}
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes cardElevate {
+  to {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+  }
+}
 
-@media screen and (max-width: 768px) {
+@keyframes inputFocus {
+  to {
+    border-color: #7C1CB0;
+    box-shadow: 0 0 0 0.2rem rgba(124, 28, 176, 0.15);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes gradientShift {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Staggered animations for form elements */
+.formSection > *:nth-child(1) { animation-delay: 0.1s; }
+.formSection > *:nth-child(2) { animation-delay: 0.2s; }
+.formSection > *:nth-child(3) { animation-delay: 0.3s; }
+.formSection > *:nth-child(4) { animation-delay: 0.4s; }
+.formSection > *:nth-child(5) { animation-delay: 0.5s; }
+.formSection > *:nth-child(6) { animation-delay: 0.6s; }
+.formSection > *:nth-child(7) { animation-delay: 0.7s; }
+.formSection > *:nth-child(8) { animation-delay: 0.8s; }
+.formSection > *:nth-child(9) { animation-delay: 0.9s; }
+
+/* Responsive */
+@media (max-width: 768px) {
   .formCard {
-    width: 95%;
+    padding: 1.5rem;
   }
 
   .gradientTitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
-  .formTitle {
-    font-size: 1rem;
+  .inputLabel {
+    font-size: 0.85rem;
   }
 
-  .submitBtn, .cancelBtn {
-    min-width: 150px;
-    padding: 8px 20px;
+  .form-control {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .formCard {
+    padding: 1rem;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Adjust animation delays for mobile */
+  .formSection > * {
+    animation-delay: 0.1s !important;
   }
 }

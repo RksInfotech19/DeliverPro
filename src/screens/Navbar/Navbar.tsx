@@ -18,7 +18,7 @@ const DeliverProNavbar = ({
   navItems,
 }: DeliverProNavbarProps) => {
   return (
-    <Navbar expand="lg" fixed="top" className={styles.navbarCustom}>
+    <Navbar expand="lg" sticky="top" className={styles.navbarCustom}>
       <Container fluid>
         <Navbar.Brand
           href="/"
@@ -32,7 +32,9 @@ const DeliverProNavbar = ({
           <span className={styles.appName}>DELIVERPRO</span>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="deliverpro-navbar" />
+      <Navbar.Toggle aria-controls="deliverpro-navbar" className={styles.customToggle}>
+        <Icons.FaBars className={styles.menuIcon} /> {/* Using your Icons.Menu from Lucide */}
+      </Navbar.Toggle>
 
         <Navbar.Collapse
           id="deliverpro-navbar"

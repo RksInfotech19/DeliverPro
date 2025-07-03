@@ -1,7 +1,7 @@
 /* Base Styles */
 .container {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 60px;
+
 }
 
 .wrapper {

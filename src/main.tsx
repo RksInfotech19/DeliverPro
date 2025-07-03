@@ -4,9 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import App from './App.tsx'
 import { loadFonts } from './fontLoader';
+import { StrictMode } from 'react';
 loadFonts();
 createRoot(document.getElementById('root')!).render(
+  <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </StrictMode>
 )

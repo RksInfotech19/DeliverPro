@@ -22,6 +22,7 @@
   --gradient-contact: linear-gradient(90deg, #c2eae8, #e5bee7);
   --gradient-navbar: linear-gradient(90deg, #3db8b4, #2bc7c2);
   --gradient-bg: linear-gradient(90deg, #e7fffb, #f8e1f8);
+  --navbar-height: 60px;
 }
 
 a {
