@@ -1,24 +1,31 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import DeliverProNavbar from '../Navbar/Navbar';
 import { ROLE_BASED_NAVIGATION } from '../Navbar/NavbarConfig';
+import type { NavigationMenuItem } from '../Navbar/NavbarConfig';
 
 const Layout = () => {
   const location = useLocation();
+  const userRole = 'ShopOwner'; // This can be dynamic later
+  const currentPath = location.pathname;
 
-  // Paths where the navbar should NOT show navItems
   const noNavItemPaths = ['/', '/add-shop'];
+  const shouldHideNavItems = noNavItemPaths.includes(currentPath);
 
-  // Check if current path should hide navItems
-  const shouldHideNavItems = noNavItemPaths.includes(location.pathname);
+  const baseNavItems = ROLE_BASED_NAVIGATION[userRole].navItems;
 
-  const userRole = 'ShopOwner'; // You can get this dynamically if needed
+  const navItems: NavigationMenuItem[] = shouldHideNavItems
+    ? []
+    : baseNavItems.map((item) => ({
+        ...item,
+        isActive: currentPath.startsWith(item.path), // ← dynamic active status
+      }));
 
   return (
     <>
       <DeliverProNavbar
         userRole={userRole}
         userName="Priya"
-        navItems={shouldHideNavItems ? [] : ROLE_BASED_NAVIGATION[userRole].navItems}
+        navItems={navItems}
       />
       <main className='pageContent'>
         <Outlet />
