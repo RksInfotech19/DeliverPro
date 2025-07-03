@@ -1,5 +1,8 @@
 /* Base Styles */
-
+.container {
+  padding-left: 60px;
+  padding-right: 60px;
+}
 
 .wrapper {
   max-width: 1600px;
@@ -280,6 +283,10 @@
   .actionsContainer {
     justify-content: flex-start !important;
     margin-top: 15px;
+  }
+
+  .container{
+    padding: 0;
   }
 }
 
