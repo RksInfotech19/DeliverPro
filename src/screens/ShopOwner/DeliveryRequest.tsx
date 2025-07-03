@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-import NewDeliveryStyle from "./NewDeliveryPage.module.css";
+import RequestStyle from "./DeliveryRequest.module.css";
 import { useState, useEffect } from "react";
 import { LookupLabelService } from "../../service/lookupLabel.service";
 import type { Order } from "../../models/order.model";
@@ -9,7 +9,7 @@ import { OrderService } from "../../service/Order.service";
 import SharedButton from "../../shared/SharedButton";
 import { Icons } from "../../shared/icons";
 
-const NewDeliveryPage = () => {
+const DeliveryRequest = () => {
   const [productType, setProductType] = useState<any[]>([]);
   const [orderDetails, setOrderDetails] = useState<Order>({
     orderId: 0,
@@ -73,22 +73,23 @@ const NewDeliveryPage = () => {
   };
   
   return (
-    <div className={NewDeliveryStyle.deliveryContainer}>
-      <Container className={NewDeliveryStyle.container}>
+    <div className={RequestStyle.deliveryContainer}>
+      
+      <Container className={RequestStyle.container}>
         <Row className="justify-content-center">
           <Col xl={8} lg={10} md={12}>
-            <Card className={NewDeliveryStyle.formCard}>
-              <Card.Body className={NewDeliveryStyle.cardBody}>
-                <div className="text-center mb-4">
-                  <h1 className={NewDeliveryStyle.gradientTitle}> 
-                    <Icons.FaPaperPlane className={`me-1 ${NewDeliveryStyle.paperPlane}`}/> Delivery Request
+            <Card className={RequestStyle.formCard}>
+              <Card.Body className={RequestStyle.cardBody}>
+                <div className="text-center mb-2">
+                  <h1 className={RequestStyle.gradientTitle}> 
+                    <Icons.FaPaperPlane className={`me-1 ${RequestStyle.paperPlane}`}/> Delivery Request
                   </h1>
                 </div>
                 <form onSubmit={handleSubmit}>
                   <Row className="gy-3">
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Product Type</label>
-                      <select className="form-select" id="productType" value={orderDetails.productType ?? 0}
+                      <label className={RequestStyle.inputLabel}>Product Type</label>
+                      <select className={`form-select ${RequestStyle.formSelect}`} id="productType" value={orderDetails.productType ?? 0}
                         onChange={handleInputChange} required>
                         <option value="0" disabled>Select product type</option>
                         {productType.map((type:any) => (
@@ -99,51 +100,51 @@ const NewDeliveryPage = () => {
                       </select>
                     </Col>
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Product Name</label>
-                      <input type="text" className="form-control" id="productName" 
+                      <label className={RequestStyle.inputLabel}>Product Name</label>
+                      <input type="text" className={ ` form-control ${RequestStyle.formControl}`} id="productName" 
                         value={orderDetails.productName} onChange={handleInputChange} 
                         placeholder="e.g., Grocery Package" required />
                     </Col>
 
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Approx. Weight (kg)</label>
-                      <input type="text" className="form-control" id="weight" 
+                      <label className={RequestStyle.inputLabel}>Approx. Weight (kg)</label>
+                      <input type="text" className={ ` form-control ${RequestStyle.formControl}`} id="weight" 
                         value={orderDetails.weight} onChange={handleInputChange} 
                         placeholder="e.g., 2.5" required />
                     </Col>
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Delivery Address</label>
-                      <input type="text" className="form-control" id="address" 
+                      <label className={RequestStyle.inputLabel}>Delivery Address</label>
+                      <input type="text" className={ ` form-control ${RequestStyle.formControl}`} id="address" 
                         value={orderDetails.address} onChange={handleInputChange} 
                         placeholder="Customer's full address" required />
                     </Col>
 
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Customer Name</label>
-                      <input type="text" className="form-control" id="customerName" 
+                      <label className={RequestStyle.inputLabel}>Customer Name</label>
+                      <input type="text" className={ ` form-control ${RequestStyle.formControl}`} id="customerName" 
                         value={orderDetails.customerName} onChange={handleInputChange} 
                         placeholder="Customer's full name" required />
                     </Col>
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Customer Phone</label>
-                      <input type="text" className="form-control" id="customerPhone" 
+                      <label className={RequestStyle.inputLabel}>Customer Phone</label>
+                      <input type="text" className={ ` form-control ${RequestStyle.formControl}`} id="customerPhone" 
                         value={orderDetails.customerPhone} onChange={handleInputChange} 
                         placeholder="Customer's phone number" required />
                     </Col>
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Delivery Date</label>
-                      <input type="date" className="form-control" id="deliveryDate" 
+                      <label className={RequestStyle.inputLabel}>Delivery Date</label>
+                      <input type="date" className={ ` form-control ${RequestStyle.formControl}`} id="deliveryDate" 
                         value={orderDetails.deliveryDate} onChange={handleInputChange} required />
                     </Col>
                     <Col md={6}>
-                      <label className={NewDeliveryStyle.inputLabel}>Special Instructions</label>
-                      <textarea rows={2} className="form-control" id="specialInstructions" 
+                      <label className={RequestStyle.inputLabel}>Special Instructions</label>
+                      <textarea rows={2} className={ ` form-control ${RequestStyle.formControl}`} id="specialInstructions" 
                         value={orderDetails.specialInstructions} onChange={handleInputChange} 
                         placeholder="Any special handling instructions" />
                     </Col>
                   </Row>
 
-                  <div className={NewDeliveryStyle.buttonGroup}>
+                  <div className={RequestStyle.buttonGroup}>
                     <SharedButton label="Submit" variant="primary" type="submit" />
                     <SharedButton label="Cancel" variant="cancel" onClick={handleCancel} />
                   </div>
@@ -157,4 +158,4 @@ const NewDeliveryPage = () => {
   );
 };
 
-export default NewDeliveryPage;
+export default DeliveryRequest;

@@ -1,21 +1,18 @@
 /* Homepage-specific styles */
-.homeLayout {
+.homeLayout,
+.mainLayout {
   position: relative;
+  background-color: rgb(255, 255, 255);
   overflow: hidden;
 
-
+  /* ✅ Flex Centering */
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  padding: 1rem;
 }
 
-.mainLayout {
-  min-height: 100vh;
-
-    /* Horizontal center */
-  background-color: rgb(255, 255, 255);
-  overflow: hidden;        /* Prevent unnecessary scroll */
-  position: relative;
-}
-
-/* Decorative elements (homepage only) */
+/* Decorative background shapes */
 .topLeftShape {
   position: fixed;
   top: -200px;
@@ -39,7 +36,14 @@
 }
 
 @media (max-width: 576px) {
-  .topLeftShape, .bottomRightShape {
+  .topLeftShape,
+  .bottomRightShape {
     display: none;
+  }
+
+  .homeLayout,
+  .mainLayout {
+    align-items: flex-start; /* optional: top-align on small screens */
+    padding-top: 2rem;
   }
 }
