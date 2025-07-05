@@ -1,3 +1,17 @@
+// ------------------------------
+// Font Awesome Icons
+// ------------------------------
+import {
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaFacebookF,
+  FaUser as FaUserIcon // ✅ Font Awesome version
+} from "react-icons/fa";
+
+// ------------------------------
+// Lucide Icons
+// ------------------------------
 import {
   Menu as FaBars,
   X as FaTimes,
@@ -8,10 +22,6 @@ import {
   Phone as FaPhoneAlt,
   Mail as FaEnvelope,
   Clock as FaClock,
-  Linkedin as FaLinkedin,
-  Twitter as FaTwitter,
-  Instagram as FaInstagram,
-  Facebook as FaFacebookF,
   Home as FaHome,
   Info as FaInfoCircle,
   UserPlus as FaUserPlus,
@@ -33,10 +43,14 @@ import {
   Quote as FaQuoteLeft,
   Camera as FaCamera,
   UploadCloud as FaCloudUploadAlt,
-  User as FaUser,
+  User as LucideUser, // ✅ Lucide version
   Send as FaPaperPlane,
   Check as FaCheck,
   IndianRupee as FaRupeeSign,
+  Settings2 as FaUserCog,
+  LogOut as FaSignOutAlt,
+  PenLine as FaPen,
+  UserCircle as FaUserCircle,
   Package,
   ShoppingBag,
   ShoppingCart,
@@ -50,18 +64,27 @@ import {
   Search,
   Filter,
   Calendar,
-  Scale, 
-  Tag, 
-  MessageSquare, 
-  User, 
-  Phone,  
-  Store, 
-  Mail, 
+  Scale,
+  Tag,
+  MessageSquare,
+  Phone,
+  Store,
+  Mail,
   AlertCircle,
   RefreshCw,
+  LockIcon
+  
 } from "lucide-react";
 
 export const Icons = {
+  // 👉 Font Awesome Icons
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaFacebookF,
+  FaUserIcon, // Font Awesome User
+
+  // 👉 Lucide Icons (aliased as Fa* to match style)
   FaBars,
   FaTimes,
   FaBolt,
@@ -71,10 +94,6 @@ export const Icons = {
   FaPhoneAlt,
   FaEnvelope,
   FaClock,
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-  FaFacebookF,
   FaHome,
   FaInfoCircle,
   FaUserPlus,
@@ -96,10 +115,14 @@ export const Icons = {
   FaQuoteLeft,
   FaCamera,
   FaCloudUploadAlt,
-  FaUser,
   FaPaperPlane,
   FaCheck,
   FaRupeeSign,
+  FaUserCog,
+  FaSignOutAlt,
+
+  // Lucide Native Icons
+  LucideUser, // Lucide's User icon (distinct from FaUserIcon)
   Package,
   ShoppingBag,
   ShoppingCart,
@@ -113,13 +136,15 @@ export const Icons = {
   Search,
   Filter,
   Calendar,
-  Scale, 
-  Tag, 
-  MessageSquare, 
-  User, 
-  Phone,  
-  Store, 
-  Mail, 
+  Scale,
+  Tag,
+  MessageSquare,
+  Phone,
+  Store,
+  Mail,
   AlertCircle,
-  RefreshCw
+  RefreshCw,
+  FaPen,
+  FaUserCircle,
+  LockIcon
 };

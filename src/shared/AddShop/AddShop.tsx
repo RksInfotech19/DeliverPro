@@ -298,7 +298,7 @@ const AddShop = () => {
             </div>
 
             <h5 className={`mt-1 ${styles.sectionHeading}`}>
-              <Icons.FaUser className={styles.iconColor} /> Owner Information
+              <Icons.LucideUser className={styles.iconColor} /> Owner Information
             </h5>
 
             <div className="row g-3">

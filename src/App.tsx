@@ -10,6 +10,7 @@ import { LookupLabelService } from './service/lookupLabel.service';
 import { useEffect } from 'react';
 import OrdersList from './screens/ShopOwner/OrderListPage';
 import DeliveryRequest from './screens/ShopOwner/DeliveryRequest';
+import AccountSettings from './screens/ShopOwner/AccountSettings';
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
         <Route path="dashboard" element={<DashboardPage />} />
         <Route path="delivery-request/:id" element={<BackgroundLayout><DeliveryRequest /></BackgroundLayout>} />
         <Route path="order-list" element={<OrdersList />} />
+        <Route path="account-settings" element={<BackgroundLayout> <AccountSettings /></BackgroundLayout> }/>
       </Route>
       <Route path="/landing-page" element={<DeliverPro />} />
     </Routes>

@@ -1,0 +1,143 @@
+/* .userPopover {
+  background-color: var(--text-white);
+  border: none;
+  min-width: 240px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1055 !important;
+}
+
+.popoverHeader {
+  background-color: #f9ebdc;
+  border-bottom: 1px solid #e9d8fd;
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+.popoverBody {
+  padding: 8px 0;
+}
+
+.popoverUserAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-violet-light) 0%, #e58225 100%);
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.popoverUserName {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.popoverUserRole {
+  font-size: 0.7rem;
+  color: #718096;
+  background-color: #edf2f7;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.popoverItem {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #4a5568;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.popoverItem:hover {
+  background-color: #f8fafc;
+  color: var(--primary-violet-light);
+}
+
+.popoverIcon {
+  margin-right: 12px;
+  width: 16px;
+  height: 16px;
+  color: #a0aec0;
+}
+
+.popoverItem:hover .popoverIcon {
+  color: var(--primary-violet-light);
+}
+
+@media (max-width: 992px) {
+  .userPopover {
+    display: none;
+  }
+} */
+
+/* UserPopover.module.css */
+
+.userPopover {
+  min-width: 220px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.popoverHeader {
+  background-color: #fdeedc;
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.popoverUserAvatar {
+  width: 36px;
+  height: 36px;
+  background-color: #7c1cb0;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.popoverUserName {
+  font-weight: 600;
+}
+
+.popoverUserRole {
+  font-size: 12px;
+  color: #7c1cb0;
+}
+
+.popoverBody {
+  padding: 12px;
+}
+
+.popoverItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.popoverItem:hover {
+  background-color: #f3f3f3;
+}
+
+.popoverIcon {
+  margin-right: 10px;
+  color: #7c1cb0;
+}

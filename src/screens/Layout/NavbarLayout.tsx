@@ -24,8 +24,12 @@ const Layout = () => {
     <>
       <DeliverProNavbar
         userRole={userRole}
-        userName="Priya"
+        userName="Priyadharsani"
         navItems={navItems}
+        onLogout={() => {
+    // TODO: Add logout logic here
+    console.log("User logged out");
+  }}
       />
       <main className='pageContent'>
         <Outlet />

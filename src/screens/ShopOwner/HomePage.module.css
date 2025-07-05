@@ -12,7 +12,7 @@
   font-family: 'Instrument Sans', sans-serif;
   position: relative;
   z-index: 1;
-  padding: 3rem 1rem; /* Using rem units */
+  padding: 1rem 1rem; /* Using rem units */
 }
 
 .contentText {
@@ -43,7 +43,7 @@
 
 /* Text Styles */
 .gradientText {
-  background: linear-gradient(90deg, #7c1cb0, #4b0082);
+  background: linear-gradient(90deg, #323232, #3e3e3e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -78,7 +78,7 @@
 
 .featureIcon {
   margin-right: 0.5rem;
-  color: #7c1cb0;
+  color: #128600;
   font-size: clamp(0.9rem, 1.3vw, 1.1rem);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .ctaGradientButton {
-  background: linear-gradient(135deg, #7c1cb0 0%, #4b0082 100%) !important;
+  background-color: #5e0c7e !important;
   border: none;
   color: white;
   font-weight: 500;

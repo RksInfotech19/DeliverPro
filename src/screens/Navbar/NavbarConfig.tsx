@@ -24,7 +24,8 @@ export const ROLE_BASED_NAVIGATION: Record<DeliverProUserRole, { navItems: Navig
       { path: '/dashboard', label: 'Dashboard', icon: 'FaStore', isActive: true },
       // { path: '/delivery-request/:id', label: 'Deliver Requests', icon: 'FaBoxes' },
       { path: '/order-list', label: 'Orders', icon: 'FaClipboardList' },
-      { path: '/deliveries', label: 'Payment', icon: 'FaTruck' }
+      { path: '/deliveries', label: 'Payment', icon: 'FaTruck' },
+
     ]
   },
   Driver: {
