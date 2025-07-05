@@ -107,7 +107,6 @@ const OrdersList: React.FC = () => {
 
   const OrderCard: React.FC<OrderCardProps> = ({ order, index }) => {
     const statusText = getStatusText(order.status);
-    console.log('OrderCard', order, statusText);
     const isHovered = hoveredCard === `${order.orderId}-${index}`;
     const IconComponent = ordersIcons[statusText] || Icons.Package;
 

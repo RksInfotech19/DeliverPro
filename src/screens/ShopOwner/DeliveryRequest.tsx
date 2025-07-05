@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import { OrderService } from "../../service/Order.service";
 import SharedButton from "../../shared/SharedButton";
 import { Icons } from "../../shared/icons";
+import { useToast } from "../../context/ToastContext";
 
 const DeliveryRequest = () => {
   const [productType, setProductType] = useState<any[]>([]);
@@ -31,10 +32,16 @@ const DeliveryRequest = () => {
 
   const navigate = useNavigate();
   const { id } = useParams();
+  const {showToast} = useToast();
 
   const handleCancel = () => {
-    navigate("/dashboard");
-  }
+    showToast("Redirecting to dashboard...", "success", 2000);
+
+    // Delay navigation until after toast is visible
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 500); // delay just enough for toast to render
+  };
 
   useEffect(() => {
     const fetchProductTypes = async () => {
@@ -65,7 +72,8 @@ const DeliveryRequest = () => {
     try {
       const service = OrderService.getInstance();
       service.addOrder(orderDetails);
-      navigate("/order-list");
+      // navigate("/order-list");
+      showToast("Order Created Successfully", "success", 3000);
     } catch (error) {
       console.error("Error submitting order:", error);
     }

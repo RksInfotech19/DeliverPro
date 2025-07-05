@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './LandingScreen.module.css';
+import './LandingScreen.css';
 import logo from '../../assets/images/logo.png';
 import HomeBanner from '../../assets/images/home-banner.png';
 import { Icons } from '../../shared/icons';
@@ -76,7 +76,7 @@ const DeliverPro = () => {
             </a>
             </li>
             <li className="nav-item">
-            <a className="nav-link" href="#signup" onClick={(e) => handleLinkClick(e, 'signup')}>
+            <a className="nav-link" href="#signup">
                 <Icons.FaUserPlus className="me-2" /> Signup
             </a>
             </li>
